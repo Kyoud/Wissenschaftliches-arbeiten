@@ -1,30 +1,61 @@
 \documentclass[11pt]{article}
+
 \usepackage{graphicx} 
 \usepackage{natbib}
-\title{Hausaufgabe 1 \\ Flussprobem}
+
+\title{Hausaufgabe 1 \\ Flussproblem}
+
 \author{Jan Niklas Hollenbeck \\ und \\ Marco Leeske}
+
 \date{\today}
+
 \begin{document}
+
 \maketitle
+
 \newpage
+
 \begin{abstract}
-Dies Ist ein Abstract. Dies Ist ein Abstract.Dies Ist ein Abstract.Dies Ist ein Abstract.Dies Ist ein Abstract.Dies Ist ein Abstract.Dies Ist ein Abstract.Dies Ist ein Abstract.Dies Ist ein Abstract.Dies Ist ein Abstract.Dies Ist ein Abstract.Dies Ist ein Abstract.Dies Ist ein Abstract.Dies Ist ein Abstract.Dies Ist ein Abstract.Dies Ist ein Abstract.Dies Ist ein Abstract.Dies Ist ein Abstract.Dies Ist ein Abstract.Dies Ist ein Abstract.
+
+Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract.Dies wird ein Abstract. 
+
 \end{abstract}
 
-\section{Einleitung}
-\subsection{Problem}
-Das Flussproblem ist ein mathematisches Problem zur Findung von maximalen Durchsatz in Netzwerken.
-\subsection{Graph}
-Diese Netzwerke zeichnen sich durch Ihre Richtung aus. Durch ihn fließt von der Quelle zur Senke immer eine Menge an Einheiten. Diese Können Liter, Autos oÄ. sein. In Figure \ref{fig:Graph1} Sieht man die Senke Auf der linken Seite gekennzeichnet durch "S".
 
-\citet{Jacobson1999Towards}blasdf asersdf aewras dfaer
+\section{Einleitung}
+\label{Einleitung}
+
+Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. 
+
+%\newpage
+%\tableofcontents
+
+\newpage
+\section{Einf\"uhrung: Problem}
+\label{Problem}
+
+Das Flussproblem beschreibt ein mathematisches Problem in Netzwerken.
+
+\subsection{Netzwerke}
+\label{Netzwerke}
+
+Flussprobleme k\"onnen in Netzwerken mithilfe von Graphen modelliert werden. Hierbei ist ein Quelle-Senke-Netzwerk(im Folgenden q-s-Netzwerk) ein kantenbewerteter, gerichteter Graph G = (V, E) mit der Eigenheit, dass eine Ecke q als Quelle sowie eine Ecke s als Senke bezeichnet wird. Die zwischen Quelle und Senke liegenden Knoten und Kanten können als Zwischenstationen aufgefasst werden. \"Uberdies wird jeder Kante, also eine Verbindung von zwei Ecken im Netzwerk, eine Kapazität c zugewiesen. Sie gibt an, wie viel maximal durch die Kante fließen kann. \citep{Testref}
+
+In Figure \ref{fig:Graph1} unter \ref{Graph} sieht man die Senke auf der linken Seite, gekenn-zeichnet durch "S". 
+
+\subsection{Graph}
+\label{Graph}
 
 \begin{figure}[htbp] 
   \centering
      \includegraphics{graph1} 
-  \caption{Bild eines Netzwerk-Graphens}
+  \caption{Bild eines Netzwerk-Graphen}
   \label{fig:Graph1}
 \end{figure}
-\bibliography{test.bib}
-\bibliographystyle{plainnat}
+
+
+
+\bibliography{test}
+\bibliographystyle{plainnat} 
+
 \end{document}

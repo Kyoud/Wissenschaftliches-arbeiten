@@ -1,0 +1,4 @@
+\contentsline {section}{\numberline {1}Einleitung}{2}
+\contentsline {section}{\numberline {2}Problem}{4}
+\contentsline {subsection}{\numberline {2.1}Netzwerke}{4}
+\contentsline {subsection}{\numberline {2.2}Graph}{4}
