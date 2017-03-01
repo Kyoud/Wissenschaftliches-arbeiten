@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.29)  1 MAR 2017 14:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.29)  1 MAR 2017 16:19
 entering extended mode
 **./Hausaufgabe1.tex
 (Hausaufgabe1.tex
@@ -60,7 +60,11 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count88
 )
-(Hausaufgabe1.aux)
+(Hausaufgabe1.aux
+
+LaTeX Warning: Label `Netzwerke' multiply defined.
+
+)
 \openout1 = `Hausaufgabe1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
@@ -75,8 +79,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count89
 \scratchdimen=\dimen105
@@ -144,35 +147,36 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 [1
 
 {C:/Users/mlees/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
+<graph1.png, id=13, 284.06125pt x 213.79875pt>
+File: graph1.png Graphic file (type png)
+ <use graph1.png>
+Package pdftex.def Info: graph1.png used on input line 54.
+(pdftex.def)             Requested size: 284.06053pt x 213.79822pt.
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ¶ in font cmr10!
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ¤ in font cmr10!
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no Ÿ in font cmr10!
+ [3 <./graph1.png>] (Hausaufgabe1.bbl) [4] (Hausaufgabe1.aux)
 
-<graph1.png, id=13, 284.06125pt x 213.79875pt>
-File: graph1.png Graphic file (type png)
- <use graph1.png>
-Package pdftex.def Info: graph1.png used on input line 51.
-(pdftex.def)             Requested size: 284.06053pt x 213.79822pt.
+LaTeX Warning: There were multiply-defined labels.
 
-(Hausaufgabe1.bbl [3 <./graph1.png>]) [4] (Hausaufgabe1.aux) ) 
+ ) 
 Here is how much of TeX's memory you used:
- 1842 strings out of 493335
- 25412 string characters out of 3136680
- 85163 words of memory out of 3000000
- 5375 multiletter control sequences out of 15000+200000
+ 1847 strings out of 493335
+ 25481 string characters out of 3136680
+ 85244 words of memory out of 3000000
+ 5380 multiletter control sequences out of 15000+200000
  8195 words of font info for 29 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,6n,25p,943b,213s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x8
-6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on Hausaufgabe1.pdf (4 pages, 79160 bytes).
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+Output written on Hausaufgabe1.pdf (4 pages, 83471 bytes).
 PDF statistics:
  38 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
