@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.5)  11 MAR 2017 14:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.5)  11 MAR 2017 14:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -438,8 +438,13 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (9.74132pt too wide) in paragraph at lines 21--31
-\OT1/cmr/m/n/10 gibt es un-ter-schiedliche Al-go-rith-men. Diese un-ter-schei-den sich in Laufzeit
+Overfull \hbox (13.97284pt too wide) in paragraph at lines 21--31
+[]\OT1/cmr/m/n/10 In diesem Wis-senschaftlichen Ar-beit wird das Flussprob-lem beleuchtet,
+ []
+
+
+Overfull \hbox (6.72285pt too wide) in paragraph at lines 21--31
+\OT1/cmr/m/n/10 welches ein math-e-ma-tis-ches Prob-lem zur Find-ung des max-i-malen Flusses
  []
 
 [2] <graph1.png, id=14, 284.06125pt x 213.79875pt>
@@ -461,7 +466,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  38i,6n,23p,894b,213s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on Hausaufgabe1.pdf (4 pages, 81371 bytes).
+Output written on Hausaufgabe1.pdf (4 pages, 81693 bytes).
 PDF statistics:
  40 PDF objects out of 1000 (max. 8388607)
  26 compressed objects within 1 object stream
