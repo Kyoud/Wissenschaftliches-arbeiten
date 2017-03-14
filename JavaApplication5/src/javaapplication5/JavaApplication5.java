@@ -53,6 +53,9 @@ public class JavaApplication5 {
         
         System.out.println("The Max Flow is " + maxFlow);
         scanner.close();
-    }
+         // Usage example
+        EdmondsKarp edmonskarp = new EdmondsKarp(3);
+  }
+ }
 
-}
+
