@@ -71,7 +71,7 @@ public class FordFulkerson
         int maxFlow = 0;
         int pathFlow;
  
-        int[][] residualGraph = new int[numberOfVertices + 1][numberOfVertices + 1];
+        int[][] residualGraph = new int[numberOfVertices+1][numberOfVertices+1]; //legt den Rückfließenden graphen an
         for (int sourceVertex = 1; sourceVertex <= numberOfVertices; sourceVertex++)
         {
             for (int destinationVertex = 1; destinationVertex <= numberOfVertices; destinationVertex++)
@@ -86,7 +86,7 @@ public class FordFulkerson
             for (v = destination; v != source; v = parent[v])
             {
                 u = parent[v];
-                pathFlow = Math.min(pathFlow, residualGraph[u][v]);
+                pathFlow = Math.min(pathFlow, residualGraph[u][v]); // der minimaler fluss auf der strecke wird getestet
             }
             for (v = destination; v != source; v = parent[v])
             {

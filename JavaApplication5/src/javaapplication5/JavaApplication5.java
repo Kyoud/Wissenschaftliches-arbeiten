@@ -24,12 +24,12 @@ public class JavaApplication5 {
         int source;
         int sink;
         int maxFlow;
- 
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the number of nodes");
         numberOfNodes = scanner.nextInt();
         graph = new int[numberOfNodes + 1][numberOfNodes + 1];
- 
+
         System.out.println("Enter the graph matrix");
         for (int sourceVertex = 1; sourceVertex <= numberOfNodes; sourceVertex++)
         {
@@ -38,17 +38,21 @@ public class JavaApplication5 {
                graph[sourceVertex][destinationVertex] = scanner.nextInt();
            }
         }
- 
+
         System.out.println("Enter the source of the graph");
         source= scanner.nextInt();
- 
+
         System.out.println("Enter the sink of the graph");
         sink = scanner.nextInt();
- 
+        
         FordFulkerson fordFulkerson = new FordFulkerson(numberOfNodes);
+        final long timeStart = System.nanoTime(); 
         maxFlow = fordFulkerson.fordFulkerson(graph, source, sink);
+        final long timeEnd = System.nanoTime(); 
+        System.out.println("Verlaufszeit der Schleife: " + (timeEnd - timeStart) + " Nanosekunden.");
+        
         System.out.println("The Max Flow is " + maxFlow);
         scanner.close();
     }
-    
+
 }
