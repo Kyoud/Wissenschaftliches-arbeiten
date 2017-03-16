@@ -1,10 +1,10 @@
-\documentclass[11pt]{article}
+\documentclass[11pt]{llncs}
 
 \usepackage{graphicx} 
 \usepackage{natbib}
 \usepackage[utf8]{inputenc}
 
-\title{Hausaufgabe 1 \\ Flussproblem}
+\title{Das \\ Flussproblem}
 
 \author{Jan Niklas Hollenbeck \\ und \\ Marco Leeske}
 
@@ -18,16 +18,14 @@
 
 \begin{abstract}
 
-In diesem Paper wird das Flussproblem beleuchtet, welches ein mathematisches Problem zur Findung des maximalen Flusses in Netzwerken beschreibt.
- Probleme des realen Lebens werden als gerichtete Graphen modelliert und mittels Algorithmen gelöst.
- Die Anwendungsgebiete sind beispielsweise Kanalsysteme, Netzwerke oder Verkehrsleitsysteme.
- Zur Lösung des Flussproblems gibt es unterschiedliche Algorithmen. Diese unterscheiden sich in Laufzeit und Anwendungsfall.
- Die vorliegende Arbeit soll einen Überblick über drei verschiedene Algorithmen sowie deren  Anwendungsbereiche geben.
- Es werden die Funktionsweisen der Algorithmen von Ford und Fulkerson, Edmond und Karp wie auch des Algorithmus von Dinic erläutert, empirisch untersucht und ein Laufzeitvergleich durchgeführt.
+In diesem Paper wird das Flussproblem beleuchtet, welches ein mathematisches Problem zur Findung des maximalen Flusses in Netz\-werken beschreibt.
+ Probleme des realen Lebens, beispielsweise in Kanal- oder Verkehrsleitsystemen, werden als gerichtete Graphen mo\-delliert und mittels Algorithmen gelöst.
+ Zur Lösung des Flussproblems gibt es unterschiedliche Algorithmen, welche sich in Laufzeit und Anwendungsfall unterscheiden.
+ Die vorliegende Arbeit soll einen Überblick über zwei verschiedene Algorithmen sowie deren Anwendungsbereiche geben, um die Auswahl, des optimalen Algorithmus für den jeweils vorliegenden Anwendungsfall, zu erleichtern.
+ Es werden die Funktionsweisen der Algorithmen von Ford und Fulkerson sowie Edmond und Karp erläutert, empirisch untersucht und es wird ein Laufzeitvergleich durchgeführt.
  Dies wird mit Hilfe eines Java Programmes, welches für jeden Datensatz alle Algorithmen testet, realisiert.
- Die Daten sind anhand der einzelnen Vor- und Nachteile der jeweiligen Algorithmen ausgewählt, um auch besondere  Fälle zu testen.
- Anschließend werden die gesammelten Resultate verglichen, um sowohl eine Übersicht als auch eine Entscheidungshilfe geben zu können.
- Die Frage, welcher Algorithmus bei unterschiedlichen Ausgangssituationen und Erwartungen den Vorzug erhält, soll sich nach der Lektüre dieser Arbeit, so die Intention der Autoren, beantworten lassen. 
+Es werden die jeweiligen Vor- und Nachteile der Algorithmen aufgezeigt, der Funktionsumfang geprüft und anschließend die gesammelten Resultate der Laufzeittests verglichen, um sowohl eine Übersicht als auch eine Entscheidungshilfe geben zu können.
+ Die Frage, welcher Algorithmus bei unterschiedlichen Ausgangssituationen und Erwartungen den Vorzug erhält, wird sich nach der Lektüre dieser Arbeit beantworten lassen. 
 
 \end{abstract}
 
@@ -43,26 +41,27 @@ Das wird die Einleitung. Das wird die Einleitung. Das wird die Einleitung. Das w
 \newpage
 \section{Einführung}
 \label{Einfuehrung}
-
 Das Flussproblem beschreibt ein mathematisches Problem in Netzwerken.
 
 \subsection{Algorithmus}
 \label{Algorithmus}
+Ein Algorithmus beschreibt eine Handlungsvorschrift zur Abarbeitung eines Problems in Einzelschritten, welches mittels Algorithmen lösen lässt. 
 
-Ein Algorithmus beschreibt eine Handlungsvorschrift zur Abarbeitung eines Problems in Einzelschritten. 
 \subsection{Algorithmus von Ford und Fulkerson}
+Beschreibung und Erläuterung des Ford und Fulkerson Algorithmus
 
 \subsection{Algorithmus von Edmonds und Karp}
-
-\subsection{Algorithmus von Dinic}
+Beschreibung und Erläuterung des Edmond und Karp Algorithmus
 
 \subsection{Netzwerke}
 \label{Netzwerke}
-
+Systeme deren Struktur sich als mathematischer Graph darstellen lassen
 
 
 \subsection{Gerichteter Graph}
 \label{Graph}
+Ein gerichteter Graph ist ein Objekt aus der mathematischen Graphentheorie.
+
 
 \begin{figure}[htbp] 
   \centering
@@ -71,8 +70,6 @@ Ein Algorithmus beschreibt eine Handlungsvorschrift zur Abarbeitung eines Proble
   \label{fig:Graph1}
 \end{figure}
 
-\subsection{Netzwerke}
-\label{Netzwerke}
 
 \section{Der Inhalt}
 \label{Inhalt}
