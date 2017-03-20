@@ -1,8 +1,10 @@
-\documentclass[runningheads,a4paper]{llncs}
+
+\documentclass[runningheads,a4paper]{llncs}
 
 \usepackage{amssymb}
 \setcounter{tocdepth}{3}
 \usepackage{graphicx}
+\usepackage[utf8]{inputenc}
 
 \usepackage{url}
 \urldef{\mailsa}\path|{alfred.hofmann, ursula.barth, ingrid.haas, frank.holzwarth,|
@@ -27,21 +29,27 @@
 % their surnames. This ensures that the names appear correctly in
 % the running heads and the author index.
 %
-\author{Jan Niklas Hollenbeck \\ und \\ Marco Leeske}\institute{Hochschule Darmstadt}
+\author{Jan Niklas Hollenbeck \\ und \\ Marco Leeske}
+\institute{Hochschule Darmstadt}
 \maketitle
 
 
 \begin{abstract}
-In diesem Paper wird das Flussproblem beleuchtet, welches ein mathematisches Problem zur Findung des maximalen Flusses in Netz\-werken beschreibt.
- Probleme des realen Lebens, beispielsweise in Kanal- oder Verkehrsleitsystemen, werden als gerichtete Graphen mo\-delliert und mittels Algorithmen gelöst.
- Zur Lösung des Flussproblems gibt es unterschiedliche Algorithmen, welche sich in Laufzeit und Anwendungsfall unterscheiden.
- Die vorliegende Arbeit soll einen Überblick über zwei verschiedene Algorithmen sowie deren Anwendungsbereiche geben, um die Auswahl, des optimalen Algorithmus für den jeweils vorliegenden Anwendungsfall, zu erleichtern.
- Es werden die Funktionsweisen der Algorithmen von Ford und Fulkerson sowie Edmond und Karp erläutert, empirisch untersucht und es wird ein Laufzeitvergleich durchgeführt.
- Dies wird mit Hilfe eines Java Programmes, welches für jeden Datensatz alle Algorithmen testet, realisiert.
-Es werden die jeweiligen Vor- und Nachteile der Algorithmen aufgezeigt, der Funktionsumfang geprüft und anschließend die gesammelten Resultate der Laufzeittests verglichen, um sowohl eine Übersicht als auch eine Entscheidungshilfe geben zu können.
- Die Frage, welcher Algorithmus bei unterschiedlichen Ausgangssituationen und Erwartungen den Vorzug erhält, wird sich nach der Lektüre dieser Arbeit beantworten lassen. 
+In dieser Wissenschaftlichen Arbeit wird das Flussproblem beleuchtet, welches ein mathematisches Problem zur Findung des maximalen Flusses in Netzwerken beschreibt.
+ Probleme des realen Lebens, beispielsweise in Kanal- oder Verkehrsleitsystemen, werden als gerichtete Graphen modelliert und mittels Algorithmen gelöst.
+ Zur Lösung des Flussproblems gibt es unterschiedliche Algorithmen, welche sich in Laufzeit und Funktion unterscheiden. Diese basieren auf dem Algorithmus von Ford und Fulkerson der den Grundstein für Weiterentwicklungen gelegt hat.
+ Die vorhandene Literatur geht vor allem auf die theoretische Grundlage und Funktion der einzelnen Algorithmen ein,  aber bietet keinen zufriedenstellenden praktischen Vergleich zwischen diesen.
+ Mit dieser Arbeit soll diese Lücke gefüllt werden und damit als Entscheidungshilfe für die Nutzung in der Praxis dienen.
+Basierend auf dem Algorithmus von Ford und Fulkerson untersuchen wir die beiden optimierten Algorithmen von Edmonds und Karp sowie Dinic.
+Zwischen diesen wird ein Laufzeitvergleich durchgeführt.
+ Dieser wird mit Hilfe eines Programmes, welches anhand von Datensätzen die Algorithmen testet, realisiert.
+Die Test Daten werden so gewählt, dass sie die Worst-Case-Szenarien ausgetestet werden und damit ihre Laufzeit praktisch zu prüfen.
+Es werden die jeweiligen Vor- und Nachteile der Algorithmen aufgezeigt, der Funktionsumfang geprüft und anschließend die gesammelten Resultate der Laufzeittests verglichen.
+Durch die Laufzeittest konnte der theoretische Vorteil des Algorithmus von Dinic nachgewiesen werden.
+ Trotzdem bleibt die Frage, welcher Algorithmus bei unterschiedlichen Ausgangssituationen und Erwartungen den Vorzug erhält, dies kommt unter anderem auf den Anwendungsfall und persönliche Anforderungen an.
 
 \end{abstract}
 
-
+
+
 \end{document}
