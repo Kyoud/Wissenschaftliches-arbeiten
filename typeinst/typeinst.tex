@@ -1,5 +1,5 @@
 
-\documentclass[runningheads,a4paper]{llncs}
+\documentclass[a4paper]{llncs}
 
 \usepackage{amssymb}
 \setcounter{tocdepth}{3}
@@ -37,17 +37,16 @@
 
 
 \begin{abstract}
-In dieser Wissenschaftlichen Arbeit wird das Flussproblem beleuchtet, welches ein mathematisches Problem zur Findung des maximalen Flusses in Netzwerken beschreibt.
- Probleme des realen Lebens, beispielsweise in Kanal- oder Verkehrsleitsystemen, werden als gerichtete Graphen modelliert und mittels Algorithmen gelöst.
- Zur Lösung des Flussproblems gibt es unterschiedliche Algorithmen, welche sich in Laufzeit und Funktion unterscheiden. Diese basieren auf dem Algorithmus von Ford und Fulkerson der den Grundstein für Weiterentwicklungen gelegt hat.
+In dieser wissenschaftlichen Arbeit wird das Flussproblem beleuchtet.
+ Solche Probleme des realen Lebens werden als gerichtete Graphen modelliert und mittels Algorithmen gelöst.
+Für diese Flussprobleme gibt es unterschiedliche Algorithmen, welche auf dem von Ford und Fulkerson basieren.
  Die vorhandene Literatur geht vor allem auf die theoretische Grundlage und Funktion der einzelnen Algorithmen ein,  aber bietet keinen zufriedenstellenden praktischen Vergleich zwischen diesen.
  Mit dieser Arbeit soll diese Lücke gefüllt werden und damit als Entscheidungshilfe für die Nutzung in der Praxis dienen.
 Basierend auf dem Algorithmus von Ford und Fulkerson untersuchen wir die beiden optimierten Algorithmen von Edmonds und Karp sowie Dinic.
-Zwischen diesen wird ein Laufzeitvergleich durchgeführt.
-Dieser wird mit Hilfe eines Programmes, welches anhand von Datensätzen die Algorithmen testet, realisiert.
-Die Test Daten werden so gewählt, dass sie die Worst-Case-Szenarien ausgetestet werden und damit ihre Laufzeit praktisch zu prüfen.
-Es werden die jeweiligen Vor- und Nachteile der Algorithmen aufgezeigt sowie die Implementierbarkeit geprüft. Anschließend werden die gesammelten Resultate der Laufzeittests verglichen.
-Durch die Laufzeittest konnte der theoretische Vorteil des Algorithmus von Dinic praktisch nachgewiesen werden.
+Ein Laufzeitvergleich wird mit Hilfe eines Programmes, welches anhand von Datensätzen die Algorithmen testet, realisiert.
+Die Test Daten sind so gewählt, dass sie die Worst-Case-Szenarien getestet werden, die jeweiligen Vor- und Nachteile der Algorithmen aufgezeigt und die Implementierbarkeit geprüft wird.
+Anschließend werden die gesammelten Resultate der Laufzeittests verglichen,
+wodurch der theoretische Vorteil des Algorithmus von Dinic praktisch nachgewiesen wird.
  Trotzdem bleibt die Frage, welcher Algorithmus bei unterschiedlichen Ausgangssituationen und Erwartungen den Vorzug erhält, dies kommt unter anderem auf den Anwendungsfall und persönliche Anforderungen an.
 
 \end{abstract}
@@ -56,8 +55,8 @@ Durch die Laufzeittest konnte der theoretische Vorteil des Algorithmus von Dinic
 \section{Einleitung}
 \label{Einleitung}
 
-In dieser Wissenschaftlichen Arbeit wird das Flussproblem beleuchtet, welches ein mathematisches Problem zur Findung des maximalen Flusses in Netzwerken beschreibt.
- Probleme des realen Lebens, beispielsweise in Kanal- oder Verkehrsleitsystemen, werden als gerichtete Graphen modelliert und mittels Algorithmen gelöst.
+Auf den folgenden Seiten behandeln wir das Flussproblem, welches ein mathematisches Problem zur Findung des maximalen Flusses in Netzwerken beschreibt.
+ Solche Probleme des realen Lebens, beispielsweise in Kanal- oder Verkehrsleitsystemen, werden als gerichtete Graphen modelliert und mittels Algorithmen gelöst.
  Zur Lösung des Flussproblems gibt es unterschiedliche Algorithmen, welche sich in Laufzeit und Funktion unterscheiden. Diese basieren auf dem Algorithmus von Ford und Fulkerson der den Grundstein für Weiterentwicklungen gelegt hat.
  Die vorhandene Literatur geht vor allem auf die theoretische Grundlage und Funktion der einzelnen Algorithmen ein,  aber bietet keinen zufriedenstellenden praktischen Vergleich zwischen diesen.
  Mit dieser Arbeit soll diese Lücke gefüllt werden und damit als Entscheidungshilfe für die Nutzung in der Praxis dienen.
@@ -107,6 +106,9 @@ Beschreibung und Erläuterung des Ford und Fulkerson Algorithmus
 \subsection{Algorithmus von Edmonds und Karp}
 Beschreibung und Erläuterung des Edmond und Karp Algorithmus
 
+\subsection{Algorithmus von Dinic}
+Beschreibung und Erläuterung des Algorithmus von Dinic
+
 \subsection{Netzwerke}
 \label{Netzwerke}
 Unter dem Begriff Netzwerk verbirgt sich ein System, das mittels Knoten und Kanten dargestellt wird.  In dieser Arbeit werden Netzwerke betrachtet, welche sich als mathematische Graphen modellieren lassen. Mithilfe solcher Netzwerke können Problemstellungen aus unserem Alltag so beschrieben werden, dass sie durch Anwendung geeigneter Algorithmen vereinfacht oder sogar gelöst werden können.
@@ -139,19 +141,15 @@ In Figure \ref{fig:Graph1} unter \ref{Graph} sieht man die Senke auf der linken 
 
 \section{Der Inhalt}
 \label{Inhalt}
-Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. Text text text text.
-
+Kriterien der Evaluierung, Vorstellung des Testaufbaus
 \section{Experimente}
 \label{Experimente}
-
-\subsection{Wirkungsweise der Algorithmen}
-Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. 
-
+Auflistung Test welche Daten benutzen wir und was wir damit erreichen wollen?
 \subsection{Laufzeitvergleich}
-Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. 
+Vergleich der Test Ergebnisse
 
 \subsection{Anwendungszenarien der jeweiligen Algorithmen}
-Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. 
+Die Ergebnisse also wann welcher anzuwenden ist
 
 \section{Stand der Technik (Related Work)}
 \label{Related Work}
@@ -164,8 +162,7 @@ Text text text text. Text text text text. Text text text text. Text text text te
 Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. 
 
 \subsection{Ausblick}
-Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. 
-
+Erweiterung des Algorithmus von Dinic und Bottleneck erkennen.
 
 \bibliography{test}
 \bibliographystyle{plainnat} 
