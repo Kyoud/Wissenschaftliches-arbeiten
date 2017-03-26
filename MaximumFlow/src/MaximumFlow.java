@@ -62,9 +62,7 @@ public class MaximumFlow {
                 {0, 0, 0, 0, 0, 0}    //5
         };
         EdmondsKarp m = new EdmondsKarp(6);
-        float TimeK =0;
-        float TimeD =0;
-        float tmp =0;
+        long tmp =0;
         try {
             String filename = "log.csv";
             FileWriter fw = new FileWriter(filename, true); //the true will append the new data
@@ -75,6 +73,8 @@ public class MaximumFlow {
         }
         int faktor =100000; //zum versuch 10000000
         for(int j= 0 ;j<100; j++) {
+            long TimeK =0;
+            long TimeD =0;
             for (int i = 0; i < faktor; i++) {
                 timeStart = System.nanoTime();
                 maxFlowK = m.fordFulkerson(graph2, 0, 5);
