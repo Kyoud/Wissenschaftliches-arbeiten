@@ -37,8 +37,8 @@
 
 
 \begin{abstract}
-In dieser wissenschaftlichen Arbeit wird das Flussproblem beleuchtet.
- Solche Probleme des realen Lebens werden als gerichtete Graphen modelliert und mittels Algorithmen gelöst.
+In dieser Arbeit wird das Problem zur Findung des maximalen
+Flusses in Netzwerken beleuchtet.
 Für diese Flussprobleme gibt es unterschiedliche Algorithmen, welche auf dem von Ford und Fulkerson basieren.
  Die vorhandene Literatur geht vor allem auf die theoretische Grundlage und Funktion der einzelnen Algorithmen ein,  aber bietet keinen zufriedenstellenden praktischen Vergleich zwischen diesen.
  Mit dieser Arbeit soll diese Lücke gefüllt werden und damit als Entscheidungshilfe für die Nutzung in der Praxis dienen.
@@ -60,13 +60,13 @@ Auf den folgenden Seiten behandeln wir das Flussproblem, welches ein mathematisc
  Zur Lösung des Flussproblems gibt es unterschiedliche Algorithmen, welche sich in Laufzeit und Funktion unterscheiden. Diese basieren auf dem Algorithmus von Ford und Fulkerson der den Grundstein für Weiterentwicklungen gelegt hat.
  Die vorhandene Literatur geht vor allem auf die theoretische Grundlage und Funktion der einzelnen Algorithmen ein,  aber bietet keinen zufriedenstellenden praktischen Vergleich zwischen diesen.
  Mit dieser Arbeit soll diese Lücke gefüllt werden und damit als Entscheidungshilfe für die Nutzung in der Praxis dienen.
-Basierend auf dem Algorithmus von Ford und Fulkerson untersuchen wir die beiden optimierten Algorithmen von Edmonds und Karp sowie Dinic.
+Basierend auf dem Algorithmus von Ford und Fulkerson untersuchen wir die beiden optimierten Algorithmen von Edmond und Karp sowie Dinic.
 Zwischen diesen wird ein Laufzeitvergleich durchgeführt.
 Dieser wird mit Hilfe eines Programmes, welches anhand von Datensätzen die Algorithmen testet, realisiert.
-Die Test Daten werden so gewählt, dass sie die Worst-Case-Szenarien ausgetestet werden und damit ihre Laufzeit praktisch zu prüfen.
+Die Test Daten werden so gewählt, dass sie die Worst-Case-Szenarien getestet werden und damit ihre Laufzeit praktisch zu prüfen.
 Es werden die jeweiligen Vor- und Nachteile der Algorithmen aufgezeigt sowie die Implementierbarkeit geprüft. Anschließend werden die gesammelten Resultate der Laufzeittests verglichen.
-Durch die Laufzeittest konnte der theoretische Vorteil des Algorithmus von Dinic praktisch nachgewiesen werden.
- Trotzdem bleibt die Frage, welcher Algorithmus bei unterschiedlichen Ausgangssituationen und Erwartungen den Vorzug erhält, dies kommt unter anderem auf den Anwendungsfall und persönliche Anforderungen an.
+Durch die Laufzeittests konnte der theoretische Vorteil des Algorithmus von Dinic praktisch nachgewiesen werden.
+ Die Frage, welcher Algorithmus bei unterschiedlichen Ausgangssituationen und Erwartungen den Vorzug erhält, bleibt weiterhin bestehen, denn dies kommt unter anderem auf den Anwendungsfall und persönliche Anforderungen an.
 
 \section{Einführung}
 \label{Einfuehrung}
@@ -100,18 +100,9 @@ Der Folgeschritt muss immer bestimmt sein. Ein Algorithmus darf zu jedem Zeitpun
 
 \end{enumerate} 
 
-\subsection{Algorithmus von Ford und Fulkerson}
-Beschreibung und Erläuterung des Ford und Fulkerson Algorithmus
-
-\subsection{Algorithmus von Edmonds und Karp}
-Beschreibung und Erläuterung des Edmond und Karp Algorithmus
-
-\subsection{Algorithmus von Dinic}
-Beschreibung und Erläuterung des Algorithmus von Dinic
-
 \subsection{Netzwerke}
 \label{Netzwerke}
-Unter dem Begriff Netzwerk verbirgt sich ein System, das mittels Knoten und Kanten dargestellt wird.  In dieser Arbeit werden Netzwerke betrachtet, welche sich als mathematische Graphen modellieren lassen. Mithilfe solcher Netzwerke können Problemstellungen aus unserem Alltag so beschrieben werden, dass sie durch Anwendung geeigneter Algorithmen vereinfacht oder sogar gelöst werden können.
+Unter dem Begriff Netzwerk verbirgt sich ein System, das mittels Knoten und Kanten dargestellt wird.  In dieser Arbeit werden Netzwerke betrachtet, welche sich als mathematische Graphen modellieren lassen. Mithilfe solcher Netzwerke können Problemstellungen aus unserem Alltag so beschrieben werden, dass sie durch Anwendung geeigneter Algorithmen vereinfacht oder sogar gelöst werden können. Hier im speziellen werden wir uns dem $(s,t)$-Fluss in einem Netzwerk $(G,u,s,t)$ widmen, wobei  $G$ einem gerichteten Graphen mit den oberen Kapazitäten $u$ entspricht.
 
 
 \subsection{Gerichtete Graphen}
@@ -122,12 +113,15 @@ Der Graph selbst wird als
 $G = (V,E)$ mit einer Menge V von Knoten und einer Menge
 geordneter Knotenpaare $E \subseteq V x V$ von Kanten dargestellt.\\
 
+\newpage
+
 Kanten werden als 
 $e = (a,b)$
 mit a als Start- und b als Endknoten bezeichnet.
 Zwei Kanten $e1$ und $e2$ mit 
 $e1 = (a,b)$ und $e2 = (b,a)$
-heißen gegenläufig oder antiparallel.\\
+heißen gegenläufig oder antiparallel.\\ \\
+Der Knoten $s$ zeigt den Startpunkt des Flusses. Alle durch das Netzwerk zu transportierenden Mengen starten ihren Fluss an diesem Knoten, mit dem Ziel, den Endknoten $t$ zu erreichen.
 
 In Figure \ref{fig:Graph1} unter \ref{Graph} sieht man die Senke auf der linken Seite, gekenn-zeichnet durch "S". 
 
@@ -137,6 +131,18 @@ In Figure \ref{fig:Graph1} unter \ref{Graph} sieht man die Senke auf der linken 
   \caption{Bild eines Netzwerk-Graphen}
   \label{fig:Graph1}
 \end{figure}
+
+\subsection{Algorithmus von Ford und Fulkerson}
+Der Ford und Fulkerson Algorithmus errechnet mittels einem Netzwerk $(G,u,s,t)$ den maximalen Fluss $f$.\\ \\Input: Netzwerk $(G, u, s, t)$.\\Output: Maximaler Fluss $f$.\\ \\
+Schritt 1: Setzen Sie $f(e) = 0$ für alle Kanten $e \subseteq E$.\\ \\Schritt 2: Bestimmen Sie $Gf$ und $uf (e)$.\\ \\Schritt 3: Konstruieren Sie einen einfachen $(s, t)$-Weg $p$ in $Gf$ . Falls keiner existiert:
+STOPP.\\ \\Schritt 4: Verändern Sie den Fluss $f$ entlang des Wegs $p$ um $Y := mine \subseteq p uf (e)$.\\ \\Schritt 5: Gehen Sie zu Schritt 2
+
+
+\subsection{Algorithmus von Edmonds und Karp}
+Beschreibung und Erläuterung des Edmonds und Karp Algorithmus
+
+\subsection{Algorithmus von Dinic}
+Beschreibung und Erläuterung des Algorithmus von Dinic
 
 
 \section{Der Inhalt}

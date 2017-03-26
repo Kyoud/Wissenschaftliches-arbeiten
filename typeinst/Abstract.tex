@@ -1,10 +1,12 @@
 
-\documentclass[runningheads,a4paper]{llncs}
+\documentclass[a4paper]{llncs}
 
 \usepackage{amssymb}
 \setcounter{tocdepth}{3}
-\usepackage{graphicx}
+\usepackage{graphicx} 
+\usepackage{natbib}
 \usepackage[utf8]{inputenc}
+\usepackage{varwidth} 
 
 \usepackage{url}
 \urldef{\mailsa}\path|{alfred.hofmann, ursula.barth, ingrid.haas, frank.holzwarth,|
@@ -35,21 +37,35 @@
 
 
 \begin{abstract}
-In dieser Wissenschaftlichen Arbeit wird das Flussproblem beleuchtet, welches ein mathematisches Problem zur Findung des maximalen Flusses in Netzwerken beschreibt.
- Probleme des realen Lebens, beispielsweise in Kanal- oder Verkehrsleitsystemen, werden als gerichtete Graphen modelliert und mittels Algorithmen gelöst.
- Zur Lösung des Flussproblems gibt es unterschiedliche Algorithmen, welche sich in Laufzeit und Funktion unterscheiden. Diese basieren auf dem Algorithmus von Ford und Fulkerson der den Grundstein für Weiterentwicklungen gelegt hat.
+In dieser wissenschaftlichen Arbeit wird das Flussproblem beleuchtet.
+ Solche Probleme des realen Lebens werden als gerichtete Graphen modelliert und mittels Algorithmen gelöst.
+Für diese Flussprobleme gibt es unterschiedliche Algorithmen, welche auf dem von Ford und Fulkerson basieren.
  Die vorhandene Literatur geht vor allem auf die theoretische Grundlage und Funktion der einzelnen Algorithmen ein,  aber bietet keinen zufriedenstellenden praktischen Vergleich zwischen diesen.
  Mit dieser Arbeit soll diese Lücke gefüllt werden und damit als Entscheidungshilfe für die Nutzung in der Praxis dienen.
-Basierend auf dem Algorithmus von Ford und Fulkerson untersuchen wir die beiden optimierten Algorithmen von Edmonds und Karp sowie Dinic.
-Zwischen diesen wird ein Laufzeitvergleich durchgeführt.
-Dieser wird mit Hilfe eines Programmes, welches anhand von Datensätzen die Algorithmen testet, realisiert.
-Die Test Daten werden so gewählt, dass sie die Worst-Case-Szenarien ausgetestet werden und damit ihre Laufzeit praktisch zu prüfen.
-Es werden die jeweiligen Vor- und Nachteile der Algorithmen aufgezeigt sowie die Implementierbarkeit geprüft. Anschließend werden die gesammelten Resultate der Laufzeittests verglichen.
-Durch die Laufzeittest konnte der theoretische Vorteil des Algorithmus von Dinic praktisch nachgewiesen werden.
+Basierend auf dem Algorithmus von Ford und Fulkerson untersuchen wir die beiden optimierten Algorithmen von Edmond und Karp sowie Dinic.
+Ein Laufzeitvergleich wird mit Hilfe eines Programmes, welches anhand von Datensätzen die Algorithmen testet, realisiert.
+Die Test Daten sind so gewählt, dass sie die Worst-Case-Szenarien getestet werden, die jeweiligen Vor- und Nachteile der Algorithmen aufgezeigt und die Implementierbarkeit geprüft wird.
+Anschließend werden die gesammelten Resultate der Laufzeittests verglichen,
+wodurch der theoretische Vorteil des Algorithmus von Dinic praktisch nachgewiesen wird.
  Trotzdem bleibt die Frage, welcher Algorithmus bei unterschiedlichen Ausgangssituationen und Erwartungen den Vorzug erhält, dies kommt unter anderem auf den Anwendungsfall und persönliche Anforderungen an.
 
 \end{abstract}
 
 
+\section{Einleitung}
+\label{Einleitung}
+
+Auf den folgenden Seiten behandeln wir das Flussproblem, welches ein mathematisches Problem zur Findung des maximalen Flusses in Netzwerken beschreibt.
+ Solche Probleme des realen Lebens, beispielsweise in Kanal- oder Verkehrsleitsystemen, werden als gerichtete Graphen modelliert und mittels Algorithmen gelöst.
+ Zur Lösung des Flussproblems gibt es unterschiedliche Algorithmen, welche sich in Laufzeit und Funktion unterscheiden. Diese basieren auf dem Algorithmus von Ford und Fulkerson, einem Verfahren zur Bestimmung des maximalen Flusses in Netzwerken, der den Grundstein für Weiterentwicklungen gelegt hat.
+ Die vorhandene Literatur geht vor allem auf die theoretische Grundlage und Funktion der einzelnen Algorithmen ein,  aber bietet keinen zufriedenstellenden praktischen Vergleich zwischen diesen, denn welcher Algorithmus unter bestimmten Umständen den Vorzug erhalten sollte, wird nicht beschrieben. 
+ Mit dieser Arbeit soll diese Lücke gefüllt werden und damit als Entscheidungshilfe für die Nutzung in der Praxis dienen.
+Basierend auf dem Algorithmus von Ford und Fulkerson untersuchen wir die beiden optimierten Algorithmen von Edmond und Karp sowie Dinic.
+Zwischen diesen wird ein Laufzeitvergleich praktisch durchgeführt.
+Dieser wird mit Hilfe eines Programmes, welches anhand von Datensätzen die Algorithmen testet, realisiert.
+Die Test Daten werden so gewählt, dass sie die Worst-Case-Szenarien testen und ihre Laufzeit praktisch prüfen werden.
+Es werden die jeweiligen Vor- und Nachteile der Algorithmen aufgezeigt sowie die Implementierbarkeit geprüft. Anschließend werden die gesammelten Resultate der Laufzeittests verglichen.
+Durch die Laufzeittests konnte der theoretische Vorteil des Algorithmus von Dinic praktisch nachgewiesen werden.
+ Die Frage, welcher Algorithmus bei unterschiedlichen Ausgangssituationen und Erwartungen den Vorzug erhält, bleibt weiterhin bestehen, denn dies kommt unter anderem auf den Anwendungsfall und persönliche Anforderungen an.
 
 \end{document}
