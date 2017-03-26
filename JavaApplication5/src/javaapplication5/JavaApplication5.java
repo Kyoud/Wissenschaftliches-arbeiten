@@ -46,15 +46,31 @@ public class JavaApplication5 {
         sink = scanner.nextInt();
         
         FordFulkerson fordFulkerson = new FordFulkerson(numberOfNodes);
-        final long timeStart = System.nanoTime(); 
+        long timeStart = System.nanoTime(); 
         maxFlow = fordFulkerson.fordFulkerson(graph, source, sink);
-        final long timeEnd = System.nanoTime(); 
+        long timeEnd = System.nanoTime(); 
+        System.out.println("The Max Flow is " + maxFlow);
         System.out.println("Verlaufszeit der Schleife: " + (timeEnd - timeStart) + " Nanosekunden.");
         
-        System.out.println("The Max Flow is " + maxFlow);
-        scanner.close();
+        
+
          // Usage example
-        EdmondsKarp edmonskarp = new EdmondsKarp(3);
+            // Driver program to test above functions
+        // Let us create a graph shown in the above example
+        int graph2[][] =new int[][] { {0, 16, 13, 0, 0, 0},
+                                     {0, 0, 10, 12, 0, 0},
+                                     {0, 4, 0, 0, 14, 0},
+                                     {0, 0, 9, 0, 0, 20},
+                                     {0, 0, 0, 7, 0, 4},
+                                     {0, 0, 0, 0, 0, 0}
+                                   };
+        MaxFlow m = new MaxFlow(numberOfNodes);
+        timeStart = System.nanoTime();
+        maxFlow = m.fordFulkerson(graph2, source, sink);
+        timeEnd = System.nanoTime(); 
+        System.out.println("The maximum possible flow is " + maxFlow);
+        System.out.println("Verlaufszeit der Schleife: " + (timeEnd - timeStart) + " Nanosekunden.");
+        scanner.close();
   }
  }
 

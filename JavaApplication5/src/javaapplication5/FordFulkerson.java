@@ -21,7 +21,7 @@ public class FordFulkerson
  
     public FordFulkerson(int numberOfVertices)
     {
-        this.numberOfVertices = numberOfVertices;
+        this.numberOfVertices = numberOfVertices; //Anzahl der Knoten
         this.queue = new LinkedList<Integer>();
         parent = new int[numberOfVertices + 1];
         visited = new boolean[numberOfVertices + 1];		
