@@ -137,9 +137,24 @@ Der Ford und Fulkerson Algorithmus errechnet mittels einem Netzwerk $(G,u,s,t)$ 
 Schritt 1: Setzen Sie $f(e) = 0$ für alle Kanten $e \subseteq E$.\\ \\Schritt 2: Bestimmen Sie $Gf$ und $uf (e)$.\\ \\Schritt 3: Konstruieren Sie einen einfachen $(s, t)$-Weg $p$ in $Gf$ . Falls keiner existiert:
 STOPP.\\ \\Schritt 4: Verändern Sie den Fluss $f$ entlang des Wegs $p$ um $Y := mine \subseteq p uf (e)$.\\ \\Schritt 5: Gehen Sie zu Schritt 2
 
+\subsection{Breitensuche}
+Im Folgenden wird die Breitensuche behandelt, da sie zum verständinss der Algorithmen von Edmonds und Karp und Dinic benötigt wird.
+Die Breitensuche (breadth first search) ist ein Suchalgorithmus für Graphen der zunächst alle von Ursprung ausgehenden Knoten Makiert, bevor die Folgeknoten untersucht werden Siehe Figur \ref{fig:Graph2}.
+Mit ihm ist es möglich den Kürzesten Pfad zwischen Zwei Knoten zu finden.
+In unserem Anwendungsfall wird die Quelle s als Startknoten definiert und von ihr ausgehend alle Pfade zur Senke gesucht. Der kürzeste wird dann zurück geliefert.
+\begin{figure}[htbp] 
+  \centering
+     \includegraphics[scale=0.14]{BreitensucheGraph} 
+  \caption{Die Ebenen werden nacheinander abgearbeitet, wenn Knoten bereits besucht wurden muss dieser nicht noch einmal makiert werden.}
+  \label{fig:Graph2}
+\end{figure}
 
 \subsection{Algorithmus von Edmonds und Karp}
-Beschreibung und Erläuterung des Edmonds und Karp Algorithmus
+Der Algorithmus von Edmonds und Karp ist eine Weiterentwicklung des Ford und Fulkerson Algorithmus der 1972 publiziert wurde.
+Er unterscheidet sich zum Ford Fulkerson in seiner zusätzlichen Breitensuche.
+Die Breitensuche liefert immer den Kürzesten Weg von s nach t gemessen an der anzahl an Kanten.
+Das Heißt alle Flussvergrößerungen finden auf dem kürzeten Weg statt.
+Im Vergelich zu \ref{sec:Algorithmus von Ford und Fulkerson}
 
 \subsection{Algorithmus von Dinic}
 Beschreibung und Erläuterung des Algorithmus von Dinic

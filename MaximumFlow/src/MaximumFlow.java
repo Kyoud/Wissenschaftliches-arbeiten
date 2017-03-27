@@ -71,7 +71,7 @@ public class MaximumFlow {
         } catch (IOException ioe) {
             System.err.println("IOException: " + ioe.getMessage());
         }
-        int faktor =100000; //zum versuch 10000000
+        int faktor =1000000; //zum versuch 10000000
         for(int j= 0 ;j<100; j++) {
             long TimeK =0;
             long TimeD =0;
