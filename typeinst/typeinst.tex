@@ -37,6 +37,7 @@
 
 
 \begin{abstract}
+
 In dieser Arbeit wird das Problem zur Findung des maximalen
 Flusses in Netzwerken beleuchtet.
 Für diese Flussprobleme gibt es unterschiedliche Algorithmen, welche auf dem von Ford und Fulkerson basieren.
@@ -70,13 +71,14 @@ Durch die Laufzeittests konnte der theoretische Vorteil des Algorithmus von Dini
 
 \section{Einführung}
 \label{Einfuehrung}
-Das Flussproblem beschreibt ein mathematisches Problem in Netzwerken.\\
 
-Flussprobleme k\"onnen in Netzwerken mithilfe von Graphen modelliert werden. Hierbei ist ein Quelle-Senke-Netzwerk(im Folgenden q-s-Netzwerk) ein kantenbewerteter, gerichteter Graph G = (V, E) mit der Eigenheit, dass eine Ecke q als Quelle sowie eine Ecke s als Senke bezeichnet wird. Die zwischen Quelle und Senke liegenden Knoten und Kanten können als Zwischenstationen aufgefasst werden. \"Uberdies wird jeder Kante, also eine Verbindung von zwei Ecken im Netzwerk, eine Kapazität c zugewiesen. Sie gibt an, wie viel maximal durch die Kante fließen kann. \citep{Testref}
+Das Flussproblem beschreibt ein mathematisches Problem in Netzwerken.\\
+Flussprobleme können in Netzwerken mithilfe von Graphen modelliert und mittels Algorithmen gelöst werden. In den folgenden Zeilen werden die für diese Arbeit nötigen Voraussetzungen erläutert.
 
 \subsection{Algorithmus}
 \label{Algorithmus}
-Ein Algorithmus ist eine konkrete und eindeutige Handlungsvorschrift, um Probleme oder Klassen von Problemen zu lösen. Beispiele für einfachste Algorithmen können Gebrauchsanweisungen, Rezepte, Bauanleitungen oder Hashfunktionen sein. Wir begegnen Algorithmen im täglichen Leben wie auch bei mathematischen oder informationstechnischen Anwendungen. Algorithmen sind keine neuzeitliche Erfindung, bereits im 9. Jahrhundert beschreibt der arabische Mathematiker Al-Chwarismi (Namensgeber des Algorithmus) Algorithmen. Aus unserem heutigen Leben sind Algorithmen nicht mehr wegzudenken, Navigationssysteme zeigen uns den kürzesten Weg, Smartphones schlagen uns die nächsten zu schreibenden Worte vor oder unsere Texte werden auf Rechtschreibfehler geprüft. Das sind nur wenige von unzähligen Anwendungen, welche auf Algorithmen beruhen. Ein Algorithmus gibt die Vorgehensweise vor, wie Eingabedaten in Einzelschritten in Ausgabedaten umgewandelt werden, um ein bestimmtes Problem lösen zu können. Man spricht im Allgemeinen von Algorithmen, wenn folgende Eigenschaften erfüllt sind:\\
+
+Ein Algorithmus ist eine konkrete und eindeutige Handlungsvorschrift, um Probleme oder Klassen von Problemen zu lösen. Beispiele für einfachste Algorithmen können Gebrauchsanweisungen, Rezepte, Bauanleitungen oder Hashfunktionen sein. Wir begegnen Algorithmen im täglichen Leben wie auch bei mathematischen oder informationstechnischen Anwendungen. Algorithmen sind keine neuzeitliche Erfindung, bereits im 9. Jahrhundert beschreibt der arabische Mathe\-matiker Al-Chwarismi (Namensgeber des Algorithmus) Algorithmen. Aus unserem heutigen Leben sind Algorithmen nicht mehr wegzudenken, Navigationssysteme zeigen uns den kürzesten Weg, Smartphones schlagen uns die nächsten zu schreibenden Worte vor oder unsere Texte werden auf Rechtschreibfehler geprüft. Das sind nur wenige von unzähligen Anwendungen, welche auf Algorithmen beruhen. Ein Algorithmus gibt die Vorgehensweise vor, wie Eingabedaten in Einzelschritten in Ausgabedaten umgewandelt werden, um ein bestimmtes Problem lösen zu können. Man spricht im Allgemeinen von Algorithmen, wenn folgende Eigenschaften erfüllt sind:\\
 
 \begin{enumerate}
  
@@ -96,46 +98,46 @@ Ein Algorithmus muss nach endlich vielen Schritten ein Ergebnis liefern.\\
 Bei gleichen Voraussetzungen muss ein Algorithmus stets zum gleichen Ergebnis kommen.\\
 
 \item Determinismus\\
-Der Folgeschritt muss immer bestimmt sein. Ein Algorithmus darf zu jedem Zeitpunkt nur maximal einen möglichen Schritt zu Fortsetzung haben.\\
-
+Der Folgeschritt muss immer bestimmt sein. Ein Algorithmus darf zu jedem Zeitpunkt nur maximal einen möglichen Schritt zu Fortsetzung haben.\\ \\
+\citep{EigenschaftenVonAlgorithmen}
 \end{enumerate} 
 
 \subsection{Netzwerke}
 \label{Netzwerke}
-Unter dem Begriff Netzwerk verbirgt sich ein System, das mittels Knoten und Kanten dargestellt wird.  In dieser Arbeit werden Netzwerke betrachtet, welche sich als mathematische Graphen modellieren lassen. Mithilfe solcher Netzwerke können Problemstellungen aus unserem Alltag so beschrieben werden, dass sie durch Anwendung geeigneter Algorithmen vereinfacht oder sogar gelöst werden können. Hier im speziellen werden wir uns dem $(s,t)$-Fluss in einem Netzwerk $(G,u,s,t)$ widmen, wobei  $G$ einem gerichteten Graphen mit den oberen Kapazitäten $u$ entspricht.
+Hinter dem Begriff Netzwerk verbirgt sich ein System, das in unserem Fall, mittels Knoten und Kanten dargestellt wird. In dieser Arbeit werden Netz\-werke betrachtet, welche sich als mathematische Graphen modellieren lassen. Mithilfe solcher Netzwerke können Problemstellungen aus unserem Alltag so beschrieben werden, dass sie durch Anwendung geeigneter Algorithmen ver\-einfacht oder sogar gelöst werden können. Hier im speziellen werden wir uns dem $(s,t)$-Fluss in einem Netzwerk $(G,u,s,t)$ widmen, wobei  $G$ einem kanten\-bewerteten, gerichteten Graph mit den oberen Kapazitäten $u$ entspricht. Ein Knoten $s$ wird als Quelle, sowie ein Knoten $t$ als Senke bezeichnet. Die zwischen Quelle und Senke liegenden Knoten und Kanten können als Zwischenstationen aufgefasst werden. Überdies wird jeder Kante, einer Verbindung von zwei Knoten im Netzwerk, eine Kapazität $u$ ($>0$) zugewiesen. Sie gibt an, wie viel maximal durch die Kante fließen kann.\\ \\
+\citep{Optimierungsmodell}
 
 
 \subsection{Gerichtete Graphen}
 \label{Graph}
-Bei gerichteten oder auch orientierten Graphen bzw. Digraphen werden die Kanten als Pfeile anstelle von Linien dargestellt. Die Pfeile beschreiben die Flussrichtung der Kanten wobei verdeutlicht wird, dass jede der Kanten nur in eine Richtung durchlaufen werden kann.\\
+Bei gerichteten, orientierten Graphen bzw. Digraphen werden die Kanten als Pfeile anstelle von Linien dargestellt. Die Pfeile beschreiben die Flussrichtung der Kanten wobei verdeutlicht wird, dass jede der Kanten nur in eine Richtung durchlaufen werden kann.\\
 
 Der Graph selbst wird als
 $G = (V,E)$ mit einer Menge V von Knoten und einer Menge
-geordneter Knotenpaare $E \subseteq V x V$ von Kanten dargestellt.\\
-
-\newpage
-
+geordneter Knotenpaare $E \subseteq V x V$ von Kanten dargestellt.\\ \\
 Kanten werden als 
 $e = (a,b)$
-mit a als Start- und b als Endknoten bezeichnet.
-Zwei Kanten $e1$ und $e2$ mit 
-$e1 = (a,b)$ und $e2 = (b,a)$
+mit $a$ als Start- und $b$ als Endknoten bezeichnet.
+Zwei Kanten $e_{1}$ und $e_{2}$ mit 
+$e_{1} = (a,b)$ und $e_{2} = (b,a)$
 heißen gegenläufig oder antiparallel.\\ \\
-Der Knoten $s$ zeigt den Startpunkt des Flusses. Alle durch das Netzwerk zu transportierenden Mengen starten ihren Fluss an diesem Knoten, mit dem Ziel, den Endknoten $t$ zu erreichen.
+Der Knoten $s$ zeigt den Startpunkt des Flusses. Alle durch das Netzwerk zu transportierenden Mengen starten ihren Fluss an diesem Knoten, mit dem Ziel, den Endknoten $t$ zu erreichen.\\ 
 
-In Figure \ref{fig:Graph1} unter \ref{Graph} sieht man die Senke auf der linken Seite, gekenn-zeichnet durch "S". 
+In Figure \ref{fig:Graph1} unter \ref{Graph} sieht man die Quelle auf der linken Seite, gekenn-zeichnet durch "$s$" und die Senke auf den rechten Seite dargestellt als "$t$" Des Weiteren sind die Kapazitäten "$u$" an jeder Kante angegeben. 
 
 \begin{figure}[htbp] 
   \centering
      \includegraphics{graph1} 
-  \caption{Bild eines Netzwerk-Graphen}
+  \caption{Bild eines ($s,t$)-Netzwerkes als gerichteter Graph \citep{GuN}}
   \label{fig:Graph1}
 \end{figure}
 
 \subsection{Algorithmus von Ford und Fulkerson}
-Der Ford und Fulkerson Algorithmus errechnet mittels einem Netzwerk $(G,u,s,t)$ den maximalen Fluss $f$.\\ \\Input: Netzwerk $(G, u, s, t)$.\\Output: Maximaler Fluss $f$.\\ \\
-Schritt 1: Setzen Sie $f(e) = 0$ für alle Kanten $e \subseteq E$.\\ \\Schritt 2: Bestimmen Sie $Gf$ und $uf (e)$.\\ \\Schritt 3: Konstruieren Sie einen einfachen $(s, t)$-Weg $p$ in $Gf$ . Falls keiner existiert:
-STOPP.\\ \\Schritt 4: Verändern Sie den Fluss $f$ entlang des Wegs $p$ um $Y := mine \subseteq p uf (e)$.\\ \\Schritt 5: Gehen Sie zu Schritt 2
+Der Ford-Fulkerson Algorithmus ist der erste effiziente Algorithmus der in einem Netzwerk $(G,u,s,t)$ den maximalen Fluss $f$ errechnet. Der eigentliche Ablauf des Algorithmus ist sehr einfach: Man sucht einen beliebigen Pfad mit positiven Kapazitäten an allen Kanten von $s$ nach $t$ und bestimmt den maximal möglichen Fluss (geringste Kapazität auf dem Weg von $s$ nach $t$). Anschließend merkt man sich den Fluss, ändert die Kapazitäten an den Kanten entsprechend des ersten Durchlaufs ab und iteriert diesen Schritt bis kein Weg mehr zu finden ist. Die erhaltenen Flüsse werden aufaddiert und das Ergebnis entspricht dem maximalen Fluss.\\ \\Ablauf:\\ \\Input: Netzwerk $(G, u, s, t)$.\qquad Output: Maximaler Fluss $f$.\\ \\
+Schritt 1: Setzen Sie $f(e) = 0$ für alle Kanten $e \subseteq E$.\\ \\Schritt 2: Bestimmen Sie $G^{f}$ und $u^{f}(e)$.\\ \\Schritt 3: Konstruieren Sie einen einfachen $(s, t)$-Weg $p$ in $G^{f}$. Falls keiner existiert:
+STOPP.\\ \\Schritt 4: Verändern Sie den Fluss $f$ entlang des Wegs $p$ um $\gamma := min_{e \subseteq p}u^{f} (e)$.\\ \\Schritt 5: Gehen Sie zu Schritt 2\\ \\
+\citep{GuN} \\ \\
+
 
 
 \subsection{Algorithmus von Edmonds und Karp}
@@ -170,7 +172,7 @@ Text text text text. Text text text text. Text text text text. Text text text te
 \subsection{Ausblick}
 Erweiterung des Algorithmus von Dinic und Bottleneck erkennen.
 
-\bibliography{test}
+\bibliography{quellen}
 \bibliographystyle{plainnat} 
 
 \end{document}

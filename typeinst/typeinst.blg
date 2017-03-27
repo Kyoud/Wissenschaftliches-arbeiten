@@ -1,5 +1,8 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: typeinst.aux
 The style file: plainnat.bst
-Database file #1: test.bib
-Warning--I didn't find a database entry for "Testref"
-(There was 1 warning)
+Database file #1: quellen.bib
+Warning--entry type for "EigenschaftenVonAlgorithmen" isn't style-file defined
+--line 52 of file quellen.bib
+Warning--empty publisher in GuN
+Warning--empty journal in Optimierungsmodell
+(There were 3 warnings)
