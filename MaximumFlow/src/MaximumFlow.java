@@ -54,14 +54,16 @@ public class MaximumFlow {
         // Driver program to test above functions
         // Let us create a graph shown in the above example
         int graph2[][] =new int[][] {
-                {0, 16, 13, 3, 3, 3}, //0
+                {0, 16, 13, 0, 0, 0}, //0
                 {0, 0, 10, 12, 0, 0}, //1
                 {0, 4, 0, 0, 14, 0},  //2
-                {0, 0, 9, 0, 0, 20},  //3
-                {0, 0, 0, 7, 0, 4},   //4
-                {0, 0, 0, 0, 0, 0}    //5
+                {0, 3, 9, 0, 0, 20},  //3
+                {0, 4, 3, 7, 0, 4},   //4
+                {0, 0, 0, 0, 0, 0},    //5
+                {0, 0, 0, 0, 0, 0},    //6
+                {0, 0, 0, 0, 0, 0},    //7
         };
-        EdmondsKarp m = new EdmondsKarp(6);
+        EdmondsKarp m = new EdmondsKarp(8);
         long tmp =0;
         try {
             String filename = "log.csv";
@@ -99,7 +101,7 @@ public class MaximumFlow {
             } catch (IOException ioe2) {
                 System.err.println("IOException: " + ioe2.getMessage());
             }
-            System.out.println("Durchlauf :" + j);
+            System.out.println("Durchlauf :" + j + " Max Flow Karp: " + maxFlowK + " Max Flow Dinic: "+ maxFlowD);
         }
         //scanner.close();
     }

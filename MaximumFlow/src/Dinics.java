@@ -31,9 +31,9 @@ public class Dinics {
             addEdge(graph, 4, 3, 7);
             addEdge(graph, 4, 5, 4);
             //zusätzliche Kanten
-            addEdge(graph, 0, 3, 3);
-            addEdge(graph, 0, 4, 3);
-            addEdge(graph, 0, 5, 3);
+            addEdge(graph, 4, 1, 4);
+            addEdge(graph, 3, 1, 3);
+            addEdge(graph, 4, 2, 3);
 
 
 
