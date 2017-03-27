@@ -133,6 +133,7 @@ In Figure \ref{fig:Graph1} unter \ref{Graph} sieht man die Quelle auf der linken
 \end{figure}
 
 \subsection{Algorithmus von Ford und Fulkerson}
+\label{FuF}
 Der Ford-Fulkerson Algorithmus ist der erste effiziente Algorithmus der in einem Netzwerk $(G,u,s,t)$ den maximalen Fluss $f$ errechnet. Der eigentliche Ablauf des Algorithmus ist sehr einfach: Man sucht einen beliebigen Pfad mit positiven Kapazitäten an allen Kanten von $s$ nach $t$ und bestimmt den maximal möglichen Fluss (geringste Kapazität auf dem Weg von $s$ nach $t$). Anschließend merkt man sich den Fluss, ändert die Kapazitäten an den Kanten entsprechend des ersten Durchlaufs ab und iteriert diesen Schritt bis kein Weg mehr zu finden ist. Die erhaltenen Flüsse werden aufaddiert und das Ergebnis entspricht dem maximalen Fluss.\\ \\Ablauf:\\ \\Input: Netzwerk $(G, u, s, t)$.\qquad Output: Maximaler Fluss $f$.\\ \\
 Schritt 1: Setzen Sie $f(e) = 0$ für alle Kanten $e \subseteq E$.\\ \\Schritt 2: Bestimmen Sie $G^{f}$ und $u^{f}(e)$.\\ \\Schritt 3: Konstruieren Sie einen einfachen $(s, t)$-Weg $p$ in $G^{f}$. Falls keiner existiert:
 STOPP.\\ \\Schritt 4: Verändern Sie den Fluss $f$ entlang des Wegs $p$ um $\gamma := min_{e \subseteq p}u^{f} (e)$.\\ \\Schritt 5: Gehen Sie zu Schritt 2\\ \\
@@ -140,6 +141,7 @@ STOPP.\\ \\Schritt 4: Verändern Sie den Fluss $f$ entlang des Wegs $p$ um $\gam
 
 
 \subsection{Breitensuche}
+\label{Breitensuche}
 Im Folgenden wird die Breitensuche behandelt, da sie zum verständinss der Algorithmen von Edmonds und Karp und Dinic benötigt wird.
 Die Breitensuche (breadth first search) ist ein Suchalgorithmus für Graphen der zunächst alle von Ursprung ausgehenden Knoten Makiert, bevor die Folgeknoten untersucht werden Siehe Figur \ref{fig:Graph2}.
 Mit ihm ist es möglich den Kürzesten Pfad zwischen Zwei Knoten zu finden.
@@ -153,10 +155,10 @@ In unserem Anwendungsfall wird die Quelle s als Startknoten definiert und von ih
 
 \subsection{Algorithmus von Edmonds und Karp}
 Der Algorithmus von Edmonds und Karp ist eine Weiterentwicklung des Ford und Fulkerson Algorithmus der 1972 publiziert wurde.
-Er unterscheidet sich zum Ford Fulkerson in seiner zusätzlichen Breitensuche.
-Die Breitensuche liefert immer den Kürzesten Weg von s nach t gemessen an der anzahl an Kanten.
-Das Heißt alle Flussvergrößerungen finden auf dem kürzeten Weg statt.
-Im Vergelich zu \ref{sec:Algorithmus von Ford und Fulkerson}
+Er unterscheidet sich zum Ford Fulkerson durch seine zusätzliche Breitensuche \ref{Breitensuche},
+welche immer den Kürzesten Weg von s nach t gemessen an der Anzahl von Kanten liefert. 
+Entlang dieser wird der Fluss erhöt.
+Im Vergelich zum ablauf in \ref{FuF} ändert sich Schritt Nr. 3 von einem einfachen $(s, t)$-Weg $p$ in $G^{f}$ zu dem Kürzesten.
 
 \subsection{Algorithmus von Dinic}
 Beschreibung und Erläuterung des Algorithmus von Dinic
