@@ -54,7 +54,31 @@ public class Dinics {
             addEdge(graph, 5, 7, 7);
             addEdge(graph, 6, 7, 27);*/
 
-            graph = createGraph(11);
+
+            graph = createGraph(8); //zweiter test viel
+            addEdge(graph, 0, 1, 38);
+            addEdge(graph, 0, 2, 1);
+            addEdge(graph, 0, 6, 2);
+            addEdge(graph, 1, 4, 13);
+            addEdge(graph, 1, 2, 8);
+            addEdge(graph, 1, 3, 10);
+            addEdge(graph, 2, 3, 26);
+            addEdge(graph, 3, 4, 20);
+            addEdge(graph, 3, 5, 8);
+            addEdge(graph, 3, 6, 20);
+            addEdge(graph, 3, 7, 1);
+            addEdge(graph, 4, 5, 1);
+            addEdge(graph, 4, 2, 2);
+            addEdge(graph, 4, 7, 7);
+            addEdge(graph, 5, 7, 7);
+            addEdge(graph, 6, 7, 27);
+            addEdge(graph, 0, 4, 5);
+            addEdge(graph, 6, 2, 5);
+            addEdge(graph, 1, 5, 5);
+            addEdge(graph, 2, 5, 5);
+
+
+/*
             graph = createGraph(11);
             addEdge(graph, 0, 1, 38);
             addEdge(graph, 0, 2, 1);
@@ -79,7 +103,7 @@ public class Dinics {
             addEdge(graph, 8, 9, 12);
             addEdge(graph, 9, 5, 5);
             addEdge(graph, 9, 10, 12);
-
+*/
 
             //System.out.println(maxFlow(graph, 0, 5));
 
@@ -88,7 +112,7 @@ public class Dinics {
         public int Maxflow(){
             //return maxFlow(graph, 0, 5); //erster test
             //return maxFlow(graph, 0, 7); //zweiter test
-            return maxFlow(graph, 0, 10); //dritter test
+            return maxFlow(graph, 0, 7); //dritter test
 
         }
 
