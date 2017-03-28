@@ -148,21 +148,22 @@ Mit ihm ist es möglich den Kürzesten Pfad zwischen Zwei Knoten zu finden.
 In unserem Anwendungsfall wird die Quelle s als Startknoten definiert und von ihr ausgehend alle Pfade zur Senke gesucht. Der kürzeste wird dann zurück geliefert.
 \begin{figure}[htbp] 
   \centering
-     \includegraphics[scale=0.14]{graph2} 
+     \includegraphics[scale=0.14]{BreitensucheGraph} 
   \caption{Die Ebenen werden nacheinander abgearbeitet, wenn Knoten bereits besucht wurden muss dieser nicht noch einmal makiert werden.}
   \label{fig:Graph2}
 \end{figure}
 
 \subsection{Algorithmus von Edmonds und Karp}
-Der Algorithmus von Edmonds und Karp ist eine Weiterentwicklung des Ford und Fulkerson Algorithmus der 1972 publiziert wurde.
+\label{EuK}
+Der Algorithmus von Edmonds und Karp \ref{EuK} ist eine Weiterentwicklung des Ford und Fulkerson Algorithmus der 1972 publiziert wurde.
 Er unterscheidet sich zum Ford Fulkerson durch seine zusätzliche Breitensuche \ref{Breitensuche},
 welche immer den Kürzesten Weg von s nach t gemessen an der Anzahl von Kanten liefert. 
 Entlang dieser wird der Fluss erhöt.
 Im Vergelich zum ablauf in \ref{FuF} ändert sich Schritt Nr. 3 von einem einfachen $(s, t)$-Weg $p$ in $G^{f}$ zu dem Kürzesten.
 
 \subsection{Algorithmus von Dinic}
-Beschreibung und Erläuterung des Algorithmus von Dinic
-
+\label{Dinic}
+Dinic's Algorithmus ist dem von Edmonds und Karp sehr ähnlich. Auch hier wird im Gegensatz zu Ford und Fulkerson eine Breitensuche \ref{Breitensuche} durchgeführt. Der Unterschied zu Edmonds und Karp zeigt sich im Umgang mit den gefundenen Wegen. Bei Dinic wird nicht nur der kürzeste $(s, t)$-Weg $p$ in $G^{f}$ durchlaufen und berechnet, stattdessen werden große $(s, t)$-Flüsse aus mehreren kürzesten $(s, t)$-Wegen zusammengesetzt, anschließend abgearbeitet und der maximale Fluss ermittelt.
 
 \section{Der Inhalt}
 \label{Inhalt}
@@ -170,14 +171,27 @@ Kriterien der Evaluierung, Vorstellung des Testaufbaus
 \section{Experimente}
 \label{Experimente}
 Auflistung Test welche Daten benutzen wir und was wir damit erreichen wollen?
-\begin{figure}[htbp] 
-  \centering
-     \includegraphics[scale=0.14]{tgraph1} 
-  \caption{Die Ebenen werden nacheinander abgearbeitet, wenn Knoten bereits besucht wurden muss dieser nicht noch einmal makiert werden.}
-  \label{fig:graph3}
-\end{figure}
+
 \subsection{Laufzeitvergleich}
 Vergleich der Test Ergebnisse
+
+\begin{figure}[htbp] 
+  \centering
+     \includegraphics[scale=0.3]{testgraph1} 
+  \caption{Testgraph1}
+  \label{fig:Breitensuche}
+
+ 
+  \centering
+     \includegraphics[scale=0.3]{testgraph2} 
+  \caption{Testgraph2}
+  \label{fig:Breitensuche}
+ 
+  \centering
+     \includegraphics[scale=0.3]{testgraph3} 
+  \caption{Testgraph3}
+  \label{fig:Breitensuche}
+\end{figure}
 
 \subsection{Anwendungszenarien der jeweiligen Algorithmen}
 Die Ergebnisse also wann welcher anzuwenden ist
