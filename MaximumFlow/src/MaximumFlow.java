@@ -9,6 +9,7 @@ import java.io.*;
 
 
 public class MaximumFlow {
+
     public static void main(String...arg)throws IOException{
 
         int[][] graph;
@@ -19,7 +20,8 @@ public class MaximumFlow {
         int maxFlowK =0;
         long timeStart;
         long timeEnd;
-
+        String filename = "log1.csv";
+        FileWriter fw = new FileWriter(filename, true); //the true will append the new data
 
        /* Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the number of nodes");
@@ -53,23 +55,32 @@ public class MaximumFlow {
         // Usage example
         // Driver program to test above functions
         // Let us create a graph shown in the above example
+/*
         int graph2[][] =new int[][] {
                 {0, 16, 13, 0, 0, 0}, //0
                 {0, 0, 10, 12, 0, 0}, //1
-                {0, 4, 0, 0, 14, 0},  //2
-                {0, 3, 9, 0, 0, 20},  //3
-                {0, 4, 3, 7, 0, 4},   //4
-                {0, 0, 0, 0, 0, 0},    //5
-                {0, 0, 0, 0, 0, 0},    //6
-                {0, 0, 0, 0, 0, 0},    //7
+                {0,0, 0, 0, 14, 0},  //2
+                {0, 0, 9, 0, 0, 20},  //3
+                {0, 0, 0, 7, 0, 4},   //4
+                {0, 0, 0, 0, 0, 0}    //5
+
+
+        };
+        EdmondsKarp m = new EdmondsKarp(6);*/
+        int graph2[][] =new int[][]{
+                {0, 38, 1, 0, 0, 0, 2, 0}, //0
+                {0, 0, 8, 10, 13, 0, 0, 0}, //1
+                {0, 0, 0, 26, 0, 0, 0, 0}, //2
+                {0, 0, 0, 0, 20, 8, 24, 1}, //3
+                {0, 0, 2, 0, 0, 1, 0, 7}, //4
+                {0, 0, 0, 0, 0, 0, 0, 7}, //5
+                {0, 0, 0, 0, 0, 0, 0, 27}, //6
+                {0, 0, 0, 0, 0, 0, 0, 0}, //7
         };
         EdmondsKarp m = new EdmondsKarp(8);
         long tmp =0;
         try {
-            String filename = "log.csv";
-            FileWriter fw = new FileWriter(filename, true); //the true will append the new data
             fw.write("Edmonds Karp" + "," + "Dinic \n");//appends the string to the file
-            fw.close();
         } catch (IOException ioe) {
             System.err.println("IOException: " + ioe.getMessage());
         }
@@ -79,7 +90,8 @@ public class MaximumFlow {
             long TimeD =0;
             for (int i = 0; i < faktor; i++) {
                 timeStart = System.nanoTime();
-                maxFlowK = m.fordFulkerson(graph2, 0, 5);
+                //maxFlowK = m.fordFulkerson(graph2, 0, 5); //erster test
+                maxFlowK = m.fordFulkerson(graph2, 0, 7); //zweiter test
                 timeEnd = System.nanoTime();
                 TimeK = TimeK + (timeEnd - timeStart);
 
@@ -94,15 +106,14 @@ public class MaximumFlow {
 
             }
             try {
-                String filename = "log.csv";
-                FileWriter fw = new FileWriter(filename, true); //the true will append the new data
                 fw.write(TimeK/faktor + "," + TimeD/faktor+"\n");//appends the string to the file
-                fw.close();
+
             } catch (IOException ioe2) {
                 System.err.println("IOException: " + ioe2.getMessage());
             }
             System.out.println("Durchlauf :" + j + " Max Flow Karp: " + maxFlowK + " Max Flow Dinic: "+ maxFlowD);
         }
+        fw.close();
         //scanner.close();
     }
 }

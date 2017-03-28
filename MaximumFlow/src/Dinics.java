@@ -19,7 +19,8 @@ public class Dinics {
         private List<Edge>[] graph;
 
         public Dinics(){
-            graph = createGraph(6);
+            /*
+            graph = createGraph(6); //erster test
             addEdge(graph, 0, 1, 16);
             addEdge(graph, 0, 2, 13);
             addEdge(graph, 1, 2, 10);
@@ -30,10 +31,28 @@ public class Dinics {
             addEdge(graph, 3, 5, 20);
             addEdge(graph, 4, 3, 7);
             addEdge(graph, 4, 5, 4);
-            //zusätzliche Kanten
+//zusätzliche Kanten
             addEdge(graph, 4, 1, 4);
             addEdge(graph, 3, 1, 3);
             addEdge(graph, 4, 2, 3);
+*/
+            graph = createGraph(8); //zweiter Test
+            addEdge(graph, 0, 1, 38);
+            addEdge(graph, 0, 2, 1);
+            addEdge(graph, 0, 6, 2);
+            addEdge(graph, 1, 4, 13);
+            addEdge(graph, 1, 2, 8);
+            addEdge(graph, 1, 3, 10);
+            addEdge(graph, 2, 3, 26);
+            addEdge(graph, 3, 4, 20);
+            addEdge(graph, 3, 5, 8);
+            addEdge(graph, 3, 6, 20);
+            addEdge(graph, 3, 7, 1);
+            addEdge(graph, 4, 5, 1);
+            addEdge(graph, 4, 2, 2);
+            addEdge(graph, 4, 7, 7);
+            addEdge(graph, 5, 7, 7);
+            addEdge(graph, 6, 7, 27);
 
 
 
@@ -41,7 +60,10 @@ public class Dinics {
         }
 
         public int Maxflow(){
-            return maxFlow(graph, 0, 5);
+            //return maxFlow(graph, 0, 5); //erster test
+            return maxFlow(graph, 0, 7); //zweiter test
+            //return maxFlow(graph, 0, 5); //dritter test
+
         }
 
         public static List<Edge>[] createGraph(int nodes) {
