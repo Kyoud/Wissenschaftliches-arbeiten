@@ -3,6 +3,7 @@ The style file: plainnat.bst
 Database file #1: quellen.bib
 Warning--entry type for "EigenschaftenVonAlgorithmen" isn't style-file defined
 --line 52 of file quellen.bib
+Warning--I didn't find a database entry for "FordFulkersonOnline"
 Warning--empty publisher in GuN
 Warning--empty journal in Optimierungsmodell
-(There were 3 warnings)
+(There were 4 warnings)
