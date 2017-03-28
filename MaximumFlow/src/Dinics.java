@@ -19,8 +19,8 @@ public class Dinics {
         private List<Edge>[] graph;
 
         public Dinics(){
-            /*
-            graph = createGraph(6); //erster test
+
+            /*graph = createGraph(6); //erster test
             addEdge(graph, 0, 1, 16);
             addEdge(graph, 0, 2, 13);
             addEdge(graph, 1, 2, 10);
@@ -31,11 +31,24 @@ public class Dinics {
             addEdge(graph, 3, 5, 20);
             addEdge(graph, 4, 3, 7);
             addEdge(graph, 4, 5, 4);
-//zusätzliche Kanten
-            addEdge(graph, 4, 1, 4);
-            addEdge(graph, 3, 1, 3);
-            addEdge(graph, 4, 2, 3);
-*/
+            //zusätzliche Kanten*/
+
+            graph = createGraph(6); //erster test viel
+            addEdge(graph, 0, 1, 16);
+            addEdge(graph, 0, 2, 13);
+            addEdge(graph, 1, 2, 10);
+            addEdge(graph, 1, 3, 12);
+            addEdge(graph, 2, 1, 4);
+            addEdge(graph, 2, 4, 14);
+            addEdge(graph, 3, 2, 9);
+            addEdge(graph, 3, 5, 20);
+            addEdge(graph, 4, 3, 7);
+            addEdge(graph, 4, 5, 4);
+            //zusätzliche kanten
+            addEdge(graph, 0, 3, 5);
+            addEdge(graph, 0, 4, 5);
+            addEdge(graph, 1, 4, 5);
+
             /*graph = createGraph(8); //zweiter Test
             addEdge(graph, 0, 1, 38);
             addEdge(graph, 0, 2, 1);
@@ -55,7 +68,7 @@ public class Dinics {
             addEdge(graph, 6, 7, 27);*/
 
 
-            graph = createGraph(8); //zweiter test viel
+            /*graph = createGraph(8); //zweiter test viel
             addEdge(graph, 0, 1, 38);
             addEdge(graph, 0, 2, 1);
             addEdge(graph, 0, 6, 2);
@@ -110,9 +123,9 @@ public class Dinics {
         }
 
         public int Maxflow(){
-            //return maxFlow(graph, 0, 5); //erster test
+            return maxFlow(graph, 0, 5); //erster test
             //return maxFlow(graph, 0, 7); //zweiter test
-            return maxFlow(graph, 0, 7); //dritter test
+            //return maxFlow(graph, 0, 7); //dritter test
 
         }
 

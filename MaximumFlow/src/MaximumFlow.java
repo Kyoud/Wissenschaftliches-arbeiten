@@ -20,7 +20,7 @@ public class MaximumFlow {
         int maxFlowK =0;
         long timeStart;
         long timeEnd;
-        String filename = "log2_wenig.csv";
+        String filename = "log1_viel.csv";
         FileWriter fw = new FileWriter(filename, true); //the true will append the new data
 
        /* Scanner scanner = new Scanner(System.in);
@@ -68,18 +68,16 @@ public class MaximumFlow {
         };
         EdmondsKarp m = new EdmondsKarp(6);*/
         int graph2[][] =new int[][] {
-                {0, 38, 1, 0, 5, 0, 2 ,0}, //0
-                {0, 0, 8, 10, 13, 5, 0 ,0}, //1
-                {0, 0, 0, 26, 0, 5, 0 ,0}, //2
-                {0, 0, 0, 0, 20, 8, 24, 1}, //3
-                {0, 0, 2, 0, 0, 1, 0 ,7}, //4
-                {0, 0, 0, 0, 0, 0, 0 ,7}, //5
-                {0, 0, 5, 0, 0, 0, 0 ,27}, //6
-                {0, 0, 0, 0, 0, 0, 0 ,0} //7
+                {0, 16, 13, 5, 5, 0}, //0
+                {0, 0, 10, 12, 5, 0}, //1
+                {0,0, 0, 0, 14, 0},  //2
+                {0, 0, 9, 0, 0, 20},  //3
+                {0, 0, 0, 7, 0, 4},   //4
+                {0, 0, 0, 0, 0, 0}    //5
 
 
         };
-        EdmondsKarp m = new EdmondsKarp(8);
+        EdmondsKarp m = new EdmondsKarp(6);
         long tmp =0;
         try {
             fw.write("Edmonds Karp" + "," + "Dinic \n");//appends the string to the file
@@ -93,7 +91,7 @@ public class MaximumFlow {
             for (int i = 0; i < faktor; i++) {
                 timeStart = System.nanoTime();
                 //maxFlowK = m.fordFulkerson(graph2, 0, 5); //erster test
-                maxFlowK = m.fordFulkerson(graph2, 0, 7); //zweiter test
+                maxFlowK = m.fordFulkerson(graph2, 0, 5); //zweiter test
                 timeEnd = System.nanoTime();
                 TimeK = TimeK + (timeEnd - timeStart);
 
