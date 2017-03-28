@@ -7,11 +7,10 @@
 \usepackage{natbib}
 \usepackage[utf8]{inputenc}
 \usepackage{varwidth}
-
+\usepackage{here}
+\usepackage{subfig}
 \usepackage{url}
-\urldef{\mailsa}\path|{alfred.hofmann, ursula.barth, ingrid.haas, frank.holzwarth,|
-\urldef{\mailsb}\path|anna.kramer, leonie.kunz, christine.reiss, nicole.sator,|
-\urldef{\mailsc}\path|erika.siebert-cole, peter.strasser, lncs}@springer.com|    
+    
 \newcommand{\keywords}[1]{\par\addvspace\baselineskip
 \noindent\keywordname\enspace\ignorespaces#1}
 
@@ -45,13 +44,12 @@ Für diese Flussprobleme gibt es unterschiedliche Algorithmen, welche auf dem vo
  Mit dieser Arbeit soll diese Lücke gefüllt werden und damit als Entscheidungshilfe für die Nutzung in der Praxis dienen.
 Basierend auf dem Algorithmus von Ford und Fulkerson untersuchen wir die beiden optimierten Algorithmen von Edmonds und Karp sowie Dinic.
 Ein Laufzeitvergleich wird mit Hilfe eines Programmes, welches anhand von Datensätzen die Algorithmen testet, realisiert.
-Die Test Daten sind so gewählt, dass sie die Worst-Case-Szenarien getestet werden, die jeweiligen Vor- und Nachteile der Algorithmen aufgezeigt und die Implementierbarkeit geprüft wird.
+Die Test Daten werden so gewählt, dass man die Unterschiede der Algorithmen erkennen, ihre Laufzeit praktisch testen und die jeweiligen Vor- und Nachteile der Algorithmen aufzeigen kann.
 Anschließend werden die gesammelten Resultate der Laufzeittests verglichen,
 wodurch der theoretische Vorteil des Algorithmus von Dinic praktisch nachgewiesen wird.
  Trotzdem bleibt die Frage, welcher Algorithmus bei unterschiedlichen Ausgangssituationen und Erwartungen den Vorzug erhält, dies kommt unter anderem auf den Anwendungsfall und persönliche Anforderungen an.
 
 \end{abstract}
-
 
 \section{Einleitung}
 \label{Einleitung}
@@ -62,9 +60,9 @@ Auf den folgenden Seiten behandeln wir das Flussproblem, welches ein mathematisc
  Die vorhandene Literatur geht vor allem auf die theoretische Grundlage und Funktion der einzelnen Algorithmen ein,  aber bietet keinen zufriedenstellenden praktischen Vergleich zwischen diesen.
  Mit dieser Arbeit soll diese Lücke gefüllt werden und damit als Entscheidungshilfe für die Nutzung in der Praxis dienen.
 Basierend auf dem Algorithmus von Ford und Fulkerson untersuchen wir die beiden optimierten Algorithmen von Edmond und Karp sowie Dinic.
-Zwischen diesen wird ein Laufzeitvergleich durchgeführt.
-Dieser wird mit Hilfe eines Programmes, welches anhand von Datensätzen die Algorithmen testet, realisiert.
-Die Test Daten werden so gewählt, dass sie die Worst-Case-Szenarien getestet werden und damit ihre Laufzeit praktisch zu prüfen.
+Zwischen diesen werden Laufzeitvergleiche durchgeführt.
+Diese werden mit Hilfe eines Programmes, welches anhand von Datensätzen die Algorithmen testet, realisiert.
+Die Test Daten werden so gewählt, dass sie die Unterschiede der Algorithmen aufzeigen und man ihre Laufzeit praktisch prüfen kann.
 Es werden die jeweiligen Vor- und Nachteile der Algorithmen aufgezeigt sowie die Implementierbarkeit geprüft. Anschließend werden die gesammelten Resultate der Laufzeittests verglichen.
 Durch die Laufzeittests konnte der theoretische Vorteil des Algorithmus von Dinic praktisch nachgewiesen werden.
  Die Frage, welcher Algorithmus bei unterschiedlichen Ausgangssituationen und Erwartungen den Vorzug erhält, bleibt weiterhin bestehen, denn dies kommt unter anderem auf den Anwendungsfall und persönliche Anforderungen an.
@@ -107,7 +105,6 @@ Der Folgeschritt muss immer bestimmt sein. Ein Algorithmus darf zu jedem Zeitpun
 Hinter dem Begriff Netzwerk verbirgt sich ein System, das in unserem Fall, mittels Knoten und Kanten dargestellt wird. In dieser Arbeit werden Netz\-werke betrachtet, welche sich als mathematische Graphen modellieren lassen. Mithilfe solcher Netzwerke können Problemstellungen aus unserem Alltag so beschrieben werden, dass sie durch Anwendung geeigneter Algorithmen ver\-einfacht oder sogar gelöst werden können. Hier im speziellen werden wir uns dem $(s,t)$-Fluss in einem Netzwerk $(G,u,s,t)$ widmen, wobei  $G$ einem kanten\-bewerteten, gerichteten Graph mit den oberen Kapazitäten $u$ entspricht. Ein Knoten $s$ wird als Quelle, sowie ein Knoten $t$ als Senke bezeichnet. Die zwischen Quelle und Senke liegenden Knoten und Kanten können als Zwischenstationen aufgefasst werden. Überdies wird jeder Kante, einer Verbindung von zwei Knoten im Netzwerk, eine Kapazität $u$ ($>0$) zugewiesen. Sie gibt an, wie viel maximal durch die Kante fließen kann.\\ \\
 \citep{Optimierungsmodell}
 
-
 \subsection{Gerichtete Graphen}
 \label{Graph}
 Bei gerichteten, orientierten Graphen bzw. Digraphen werden die Kanten als Pfeile anstelle von Linien dargestellt. Die Pfeile beschreiben die Flussrichtung der Kanten wobei verdeutlicht wird, dass jede der Kanten nur in eine Richtung durchlaufen werden kann.\\
@@ -138,7 +135,6 @@ Der Ford-Fulkerson Algorithmus ist der erste effiziente Algorithmus der in einem
 Schritt 1: Setzen Sie $f(e) = 0$ für alle Kanten $e \subseteq E$.\\ \\Schritt 2: Bestimmen Sie $G^{f}$ und $u^{f}(e)$.\\ \\Schritt 3: Konstruieren Sie einen einfachen $(s, t)$-Weg $p$ in $G^{f}$. Falls keiner existiert:
 STOPP.\\ \\Schritt 4: Verändern Sie den Fluss $f$ entlang des Wegs $p$ um $\gamma := min_{e \subseteq p}u^{f} (e)$.\\ \\Schritt 5: Gehen Sie zu Schritt 2\\ \\
 \citep{GuN} \\ \\
-
 
 \subsection{Breitensuche}
 \label{Breitensuche}
@@ -181,37 +177,32 @@ Wobei das Verhältniss $(V/E)$ kleiner wird.
 \subsection{Laufzeitvergleich}
 Vergleich der Test Ergebnisse
 
-\begin{figure}[htbp] 
+\begin{figure}[H]
   \centering
-     \includegraphics[scale=0.3]{testgraph1} 
+     \includegraphics[scale=0.2]{testgraph1} 
   \caption{Testgraph1}
-  \label{fig:Breitensuche}
-
- 
+  \label{fig:testgraph1} 
   \centering
-     \includegraphics[scale=0.3]{testgraph2} 
+     \includegraphics[scale=0.2]{testgraph2} 
   \caption{Testgraph2}
-  \label{fig:Breitensuche}
- 
+  \label{fig:testgraph2} 
   \centering
-     \includegraphics[scale=0.3]{testgraph3} 
+     \includegraphics[scale=0.2]{testgraph3} 
   \caption{Testgraph3}
-  \label{fig:Breitensuche}
+  \label{fig:testgraph3}
 \end{figure}
+\citep{FordFulkersonOnline}
 
 \subsection{Anwendungszenarien der jeweiligen Algorithmen}
 Die Ergebnisse also wann welcher anzuwenden ist
 
 \section{Stand der Technik (Related Work)}
 \label{Related Work}
-\subsection{Algorithmen und Datenstrukturen Springer Verlag}
-Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. 
-\subsection{Graphentheoretische Konzepte und Algorithmen Vieweg und Teubner}
-Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. 
+Wie schon in der Einleitung \ref{Einleitung} erwähnt wurde, konnten wir keine, für uns befriedigende, vorangegangene Arbeit mit einem direkten, praktischen Laufzeitvergleich der beiden Algorithmen von Edmonds und Karp sowie dem von Dinic finden.
+
 \section{Zusammenfassung}
 \label{Zusammenfassung}
-Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. 
-
+Anhand der unter \ref{Experimente} durchgeführten Laufzeittests, zeichnet sich der Vorteil des Dinic Algorithmus deutlich ab. Über je mehr Kanten ein Graph verfügt, desto vorteilhafter ist die Nutzung des Dinic Algorithmus. Fairerweise sollte aber gesagt sein, dass der Vorteil erst bei sehr großen Graphen zum tragen kommt. 
 \subsection{Ausblick}
 Erweiterung des Algorithmus von Dinic und Bottleneck erkennen.
 
