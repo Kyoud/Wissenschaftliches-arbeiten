@@ -8,7 +8,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{varwidth}
 \usepackage{here}
-\usepackage{subfig}
+\usepackage{subfigure}
 \usepackage{url}
     
 \newcommand{\keywords}[1]{\par\addvspace\baselineskip
@@ -62,8 +62,7 @@ Auf den folgenden Seiten behandeln wir das Flussproblem, welches ein mathematisc
 Basierend auf dem Algorithmus von Ford und Fulkerson untersuchen wir die beiden optimierten Algorithmen von Edmond und Karp sowie Dinic.
 Zwischen diesen werden Laufzeitvergleiche durchgeführt.
 Diese werden mit Hilfe eines Programmes, welches anhand von Datensätzen die Algorithmen testet, realisiert.
-Die Test Daten werden so gewählt, dass sie die Unterschiede der Algorithmen aufzeigen und man ihre Laufzeit praktisch prüfen kann.
-Es werden die jeweiligen Vor- und Nachteile der Algorithmen aufgezeigt sowie die Implementierbarkeit geprüft. Anschließend werden die gesammelten Resultate der Laufzeittests verglichen.
+Die Test Daten werden so gewählt, dass die Unterschiede der Algorithmen aufgezeigt, ihre Laufzeit praktisch geprüft und die jeweiligen Vor- und Nachteile der Algorithmen ersichtlich werden. Anschließend werden die gesammelten Resultate der Laufzeittests verglichen.
 Durch die Laufzeittests konnte der theoretische Vorteil des Algorithmus von Dinic praktisch nachgewiesen werden.
  Die Frage, welcher Algorithmus bei unterschiedlichen Ausgangssituationen und Erwartungen den Vorzug erhält, bleibt weiterhin bestehen, denn dies kommt unter anderem auf den Anwendungsfall und persönliche Anforderungen an.
 
@@ -71,7 +70,7 @@ Durch die Laufzeittests konnte der theoretische Vorteil des Algorithmus von Dini
 \label{Einfuehrung}
 
 Das Flussproblem beschreibt ein mathematisches Problem in Netzwerken.\\
-Flussprobleme können in Netzwerken mithilfe von Graphen modelliert und mittels Algorithmen gelöst werden. In den folgenden Zeilen werden die für diese Arbeit nötigen Voraussetzungen erläutert.
+Flussprobleme können in Netzwerken mithilfe von Graphen modelliert und mittels Algorithmen gelöst oder vereinfacht werden. In den folgenden Zeilen werden die für diese Arbeit nötigen Voraussetzungen erläutert.
 
 \subsection{Algorithmus}
 \label{Algorithmus}
@@ -102,7 +101,7 @@ Der Folgeschritt muss immer bestimmt sein. Ein Algorithmus darf zu jedem Zeitpun
 
 \subsection{Netzwerke}
 \label{Netzwerke}
-Hinter dem Begriff Netzwerk verbirgt sich ein System, das in unserem Fall, mittels Knoten und Kanten dargestellt wird. In dieser Arbeit werden Netz\-werke betrachtet, welche sich als mathematische Graphen modellieren lassen. Mithilfe solcher Netzwerke können Problemstellungen aus unserem Alltag so beschrieben werden, dass sie durch Anwendung geeigneter Algorithmen ver\-einfacht oder sogar gelöst werden können. Hier im speziellen werden wir uns dem $(s,t)$-Fluss in einem Netzwerk $(G,u,s,t)$ widmen, wobei  $G$ einem kanten\-bewerteten, gerichteten Graph mit den oberen Kapazitäten $u$ entspricht. Ein Knoten $s$ wird als Quelle, sowie ein Knoten $t$ als Senke bezeichnet. Die zwischen Quelle und Senke liegenden Knoten und Kanten können als Zwischenstationen aufgefasst werden. Überdies wird jeder Kante, einer Verbindung von zwei Knoten im Netzwerk, eine Kapazität $u$ ($>0$) zugewiesen. Sie gibt an, wie viel maximal durch die Kante fließen kann.\\ \\
+Hinter dem Begriff Netzwerk verbirgt sich ein System, das in unserem Fall mittels Knoten und Kanten dargestellt wird. In dieser Arbeit werden Netz\-werke betrachtet, welche sich als mathematische Graphen modellieren lassen. Mithilfe solcher Netzwerke können Problemstellungen aus unserem Alltag so beschrieben werden, dass sie durch Anwendung geeigneter Algorithmen ver\-einfacht oder sogar gelöst werden können. Hier im speziellen werden wir uns dem $(s,t)$-Fluss in einem Netzwerk $(G,u,s,t)$ widmen, wobei  $G$ einem kanten\-bewerteten, gerichteten Graph mit den oberen Kapazitäten $u$ entspricht. Ein Knoten $s$ wird als Quelle, sowie ein Knoten $t$ als Senke bezeichnet. Die zwischen Quelle und Senke liegenden Knoten und Kanten können als Zwischenstationen aufgefasst werden. Überdies wird jeder Kante, einer Verbindung von zwei Knoten im Netzwerk, eine Kapazität $u$ ($>0$) zugewiesen. Sie gibt an, wie viel maximal durch die Kante fließen kann.\\ \\
 \citep{Optimierungsmodell}
 
 \subsection{Gerichtete Graphen}
@@ -177,22 +176,37 @@ Die einzelnen Paare unterscheiden sich jewails nur in der Anzahl ihrer Kanten.
 Mit diesen test zeigen wir, dass der 
 \subsection{Laufzeitvergleich}
 Vergleich der Test Ergebnisse
+\begin{figure}[H] 
+  \centering
+     \includegraphics[scale=0.8]{lzvergleich} 
+  \caption{Allgemeine Laufzeiten in der Theorie}
+  \label{fig:lzvergleich}
+\end{figure}
+
+\newpage
+
+\subsection{Verwendete Graphen}
+
+\begin{figure}
+\label{fig:testgraph1}
+    \subfigure[Testgraph 1a, 6 Knoten und 9 Kanten]{\includegraphics[height=3cm]{testgraph1}} 
+    \subfigure[Testgraph 1b, 6 Knoten und 12 Kanten]{\includegraphics[height=3cm]{testgraph11}} 
+\caption{Titel unterm gesamten Bild} 
+\end{figure}
+
+\begin{figure}
+\label{fig:testgraph2}
+    \subfigure[Testgraph 2a, 8 Knoten und 16 Kanten]{\includegraphics[height=3cm]{testgraph2}} 
+    \subfigure[Testgraph 2b, 8 Knoten und 20 Kanten]{\includegraphics[height=3cm]{testgraph22}} 
+\caption{Titel unterm gesamten Bild} 
+\end{figure}
 
 \begin{figure}[H]
-  \centering
-     \includegraphics[scale=0.2]{testgraph1} 
-  \caption{Testgraph1}
-  \label{fig:testgraph1} 
-  \centering
-     \includegraphics[scale=0.2]{testgraph2} 
-  \caption{Testgraph2}
-  \label{fig:testgraph2} 
-  \centering
-     \includegraphics[scale=0.2]{testgraph3} 
-  \caption{Testgraph3}
-  \label{fig:testgraph3}
+\label{fig:testgraph3}
+    \subfigure[Testgraph 3a, 11 Knoten und 22 Kanten]{\includegraphics[height=3.5cm]{testgraph3}} 
+    \subfigure[Testgraph 3b, 11 Knoten und 27 Kanten]{\includegraphics[height=3.5cm]{testgraph33}} 
+\caption{Titel unterm gesamten Bild} 
 \end{figure}
-\citep{FordFulkersonOnline}
 
 \subsection{Anwendungszenarien der jeweiligen Algorithmen}
 Die Ergebnisse also wann welcher anzuwenden ist
@@ -203,9 +217,7 @@ Wie schon in der Einleitung \ref{Einleitung} erwähnt wurde, konnten wir keine, 
 
 \section{Zusammenfassung}
 \label{Zusammenfassung}
-Anhand der unter \ref{Experimente} durchgeführten Laufzeittests, zeichnet sich der Vorteil des Dinic Algorithmus deutlich ab. Über je mehr Kanten ein Graph verfügt, desto vorteilhafter ist die Nutzung des Dinic Algorithmus. Fairerweise sollte aber gesagt sein, dass der Vorteil erst bei sehr großen Graphen zum tragen kommt. 
-\subsection{Ausblick}
-Erweiterung des Algorithmus von Dinic und Bottleneck erkennen.
+Anhand der unter \ref{Experimente} durchgeführten Laufzeittests, zeichnet sich der Vorteil des Dinic Algorithmus deutlich ab. Über je mehr Kanten ein Graph verfügt, desto vorteilhafter ist die Nutzung des Dinic Algorithmus. Fairerweise sollte aber gesagt sein, dass der Vorteil erst bei sehr großen Graphen zum tragen kommt. Der Zeitvorteil des Dinic Algorithmus bewegt sich bei den von uns gewählten Graphen in einem kaum messbaren Bereich, aber die prozentuale Überlegenheit bei steigender Kantenanzahl war deutlich zu erkennen.  
 
 \bibliography{quellen}
 \bibliographystyle{plainnat} 
