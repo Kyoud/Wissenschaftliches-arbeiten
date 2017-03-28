@@ -1,4 +1,4 @@
-\begin{thebibliography}{3}
+\begin{thebibliography}{4}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -15,6 +15,11 @@ Agnieszka Czernik.
 \newblock Was ist ein algorithmus – definition und beispiele, 10 2016.
 \newblock URL
   \url{https://www.datenschutzbeauftragter-info.de/was-ist-ein-algorithmus-definition-und-beispiele/}.
+
+\bibitem[Noltemeier(2009)]{GKuA}
+Sven Oliver Krumke {,}~Hartmut Noltemeier.
+\newblock \emph{Graphentheoretische Konzepte und Algorithmen}, volume~2.
+\newblock July 2009.
 
 \bibitem[Reintjes(2016)]{Optimierungsmodell}
 Christian Reintjes.

@@ -19,7 +19,8 @@
 \mainmatter  % start of an individual contribution
 
 % first the title is needed
-\title{Das \\ Flussproblem}
+\title{Edmonds und Karp oder Dinic}
+\subtitle{Ein Laufzeitvergleich}
 
 % a short form should be given in case it is too long for the running head
 \titlerunning{Das \\ Flussproblem}
@@ -72,7 +73,7 @@ Durch die Laufzeittests konnte der theoretische Vorteil des Algorithmus von Dini
 Das Flussproblem beschreibt ein mathematisches Problem in Netzwerken.\\
 Flussprobleme können in Netzwerken mithilfe von Graphen modelliert und mittels Algorithmen gelöst oder vereinfacht werden. In den folgenden Zeilen werden die für diese Arbeit nötigen Voraussetzungen erläutert.
 
-\subsection{Algorithmus}
+\subsection{Algorithmen allgemein}
 \label{Algorithmus}
 
 Ein Algorithmus ist eine konkrete und eindeutige Handlungsvorschrift, um Probleme oder Klassen von Problemen zu lösen. Beispiele für einfachste Algorithmen können Gebrauchsanweisungen, Rezepte, Bauanleitungen oder Hashfunktionen sein. Wir begegnen Algorithmen im täglichen Leben wie auch bei mathematischen oder informationstechnischen Anwendungen. Algorithmen sind keine neuzeitliche Erfindung, bereits im 9. Jahrhundert beschreibt der arabische Mathe\-matiker Al-Chwarismi (Namensgeber des Algorithmus) Algorithmen. Aus unserem heutigen Leben sind Algorithmen nicht mehr wegzudenken, Navigationssysteme zeigen uns den kürzesten Weg, Smartphones schlagen uns die nächsten zu schreibenden Worte vor oder unsere Texte werden auf Rechtschreibfehler geprüft. Das sind nur wenige von unzähligen Anwendungen, welche auf Algorithmen beruhen. Ein Algorithmus gibt die Vorgehensweise vor, wie Eingabedaten in Einzelschritten in Ausgabedaten umgewandelt werden, um ein bestimmtes Problem lösen zu können. Man spricht im Allgemeinen von Algorithmen, wenn folgende Eigenschaften erfüllt sind:\\
@@ -135,7 +136,7 @@ Schritt 1: Setzen Sie $f(e) = 0$ für alle Kanten $e \subseteq E$.\\ \\Schritt 2
 STOPP.\\ \\Schritt 4: Verändern Sie den Fluss $f$ entlang des Wegs $p$ um $\gamma := min_{e \subseteq p}u^{f} (e)$.\\ \\Schritt 5: Gehen Sie zu Schritt 2\\ \\
 \citep{GuN} \\ \\
 
-\subsection{Breitensuche}
+\subsection{Die Breitensuche}
 \label{Breitensuche}
 Im Folgenden wird die Breitensuche behandelt, da sie zum verständinss der Algorithmen von Edmonds und Karp und Dinic benötigt wird.
 Die Breitensuche (breadth first search) ist ein Suchalgorithmus für Graphen der zunächst alle von Ursprung ausgehenden Knoten Makiert, bevor die Folgeknoten untersucht werden Siehe Figur \ref{fig:Graph2}.
@@ -160,28 +161,34 @@ Im Vergelich zum ablauf in \ref{FuF} ändert sich Schritt Nr. 3 von einem einfac
 \label{Dinic}
 Dinic's Algorithmus ist dem von Edmonds und Karp sehr ähnlich. Auch hier wird im Gegensatz zu Ford und Fulkerson eine Breitensuche \ref{Breitensuche} durchgeführt. Der Unterschied zu Edmonds und Karp zeigt sich im Umgang mit den gefundenen Wegen. Bei Dinic wird nicht nur der kürzeste $(s, t)$-Weg $p$ in $G^{f}$ durchlaufen und berechnet, stattdessen werden große $(s, t)$-Flüsse aus mehreren kürzesten $(s, t)$-Wegen zusammengesetzt, anschließend abgearbeitet und der maximale Fluss ermittelt.
 
-\section{Der Inhalt}
+\section{Testablauf und Prüfungskriterien}
 \label{Inhalt}
-Wir führen im bezug auf die Mathematische Laufzeit eine Evaluierung der genannten Maximal-Fluss Algorithmen durch. Außerdem beschäftigen wir uns mit der praktischen implementierung der Algorithmen. Zuletzt wird ein Laufzeit Test der Algorithmen von Edmons und Karp sowie Dinic anhand von Testdaten durchgefürt.
-Für die Laufzeit Test haben wir ein Java Programm an unser Bedürfnisse angepasst, welches den Maximalen Fluss errechnet. Für jede Berechnung wird die Zeit gemessen.
-Da bei wenigen Durchläufen eine genaue Zeitmessung unmöglich ist werden jewails einhundert Messungen erstellt. Diese bestehen aus jewails einer Millionen Algorithmen Durchläufe von denen der Mittelwert errechnet wird.
-Die Ergebnisse werden zur einfacheren Analyse in eine CSV Datei geschrieben.
+Wir führen im bezug auf die Mathematische Laufzeit eine Evaluierung der genannten Maximal-Fluss Algorithmen durch. Außerdem beschäftigen wir uns mit der praktischen implementierung der Algorithmen. Zuletzt wird ein Laufzeit Test, der Algorithmen von Edmons und Karp sowie Dinic, anhand von Testdaten durchgefürt.
+Für die Laufzeit Test haben wir ein Java Programm an unser Bedürfnisse angepasst, welches den Maximalen Fluss errechnet. 
+Für jede Berechnung wird die Zeit gemessen, da bei wenigen Durchläufen eine genaue Zeitmessung unmöglich ist werden jewails einhundert Messungen erstellt. Diese bestehen aus jewails einer Millionen Algorithmen Durchläufe von denen der Mittelwert errechnet wird.
+Erst bei dieser Anzahl an durchläufen konnte ein konsistentes Ergebniss erziehlt werden.
+Die erhaltenen Ergebnisse werden zur einfacheren Analyse in eine CSV Datei geschrieben.
 Mit diesen Messungen wird das Verhältniss der Laufzeiten errechnet und auf Plausibilität geprüft.
 Kriterien der Evaluierung, Vorstellung des Testaufbaus
-\section{Experimente}
+\section{Implementierung und Test}
 \label{Experimente}
 Auflistung Test welche Daten benutzen wir und was wir damit erreichen wollen?
+Wir haben beide Algorithmen in unserem Programm Implementiert. Dabei konnten wir feststellen, dass beide Algorithmen ohne große Probleme implementierbar sind. Allerdings ist Dinic durch seine zusätzliche Berechnung des blockierenden Flusses Komplexer, daher ist der Implementierungsaufwand größer.
+\subsection{Laufzeitvergleich}
+Die Laufzeiten in der Theorie (Fig. \ref{fig:lzvergleich}) setzen sich aus den inneren und äußeren Schleifendurchläufen zusammen.
+Die Laufzeit des Ford Fulkerson ist vom gewählten Weg bzw. von der maximale Kapazität $C$ einer Kante, der Anzahl der Knoten $n$ und Kanten $m$  abhängig.
+Durch den einfluss der Kapazität hat der Algorithmus von Ford und Fulkerson einen Nachteil gegenüber den anderen.
+Desshalb vergleichen wir in unserm Laufzeittest nur den Algorithmus von Edmonds und Karp sowie Dinic.
+\begin{figure}[H] 
+  \centering
+     \includegraphics[scale=0.42]{lzvergleich} 
+  \caption{Allgemeine Laufzeiten in der Theorie \citep{GKuA}}
+  \label{fig:lzvergleich}
+\end{figure}
 Unser test wurde mit jewails drei Testpaaren durchgeführt, die sich in ihrer Knotenanzahl unterscheiden.
 Die einzelnen Paare unterscheiden sich jewails nur in der Anzahl ihrer Kanten.
 Mit diesen test zeigen wir, dass der 
-\subsection{Laufzeitvergleich}
-Vergleich der Test Ergebnisse
-\begin{figure}[H] 
-  \centering
-     \includegraphics[scale=0.8]{lzvergleich} 
-  \caption{Allgemeine Laufzeiten in der Theorie}
-  \label{fig:lzvergleich}
-\end{figure}
+
 
 \newpage
 
@@ -208,8 +215,6 @@ Vergleich der Test Ergebnisse
 \caption{Titel unterm gesamten Bild} 
 \end{figure}
 
-\subsection{Anwendungszenarien der jeweiligen Algorithmen}
-Die Ergebnisse also wann welcher anzuwenden ist
 
 \section{Stand der Technik (Related Work)}
 \label{Related Work}

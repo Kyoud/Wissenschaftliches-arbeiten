@@ -20,7 +20,7 @@ public class Dinics {
 
         public Dinics(){
 
-            graph = createGraph(6); //erster test wenig
+            /*graph = createGraph(6); //erster test wenig
             addEdge(graph, 0, 1, 16);
             addEdge(graph, 0, 2, 13);
             addEdge(graph, 1, 3, 12);
@@ -30,7 +30,7 @@ public class Dinics {
             addEdge(graph, 3, 5, 20);
             addEdge(graph, 4, 3, 7);
             addEdge(graph, 4, 5, 4);
-
+*/
 
             /*graph = createGraph(6); //erster test viel
             addEdge(graph, 0, 1, 16);
@@ -49,7 +49,7 @@ public class Dinics {
             */
 
 
-           /* graph = createGraph(8); //zweiter Test kurz
+            /*graph = createGraph(8); //zweiter Test kurz
             addEdge(graph, 0, 1, 38);
             addEdge(graph, 0, 2, 1);
             addEdge(graph, 0, 6, 2);
@@ -66,7 +66,7 @@ public class Dinics {
             addEdge(graph, 4, 7, 7);
             addEdge(graph, 5, 7, 7);
             addEdge(graph, 6, 7, 27);
-    */
+*/
             /*graph = createGraph(8); //zweiter Test lang
             addEdge(graph, 0, 1, 38);
             addEdge(graph, 0, 2, 1);
@@ -88,8 +88,8 @@ public class Dinics {
             addEdge(graph, 0, 4, 5);
             addEdge(graph, 1, 5, 5);
             addEdge(graph, 2, 5, 5);
-            addEdge(graph, 6, 2, 5);
-*/
+            addEdge(graph, 6, 2, 5);*/
+
             /*graph = createGraph(11); //dritter test kurz
             addEdge(graph, 0, 1, 38);
             addEdge(graph, 0, 2, 1);
@@ -114,7 +114,7 @@ public class Dinics {
             addEdge(graph, 9, 5, 5);
             addEdge(graph, 9, 10, 12);*/
 
-            /*graph = createGraph(11); //dritter test kurz
+            graph = createGraph(11); //dritter test kurz
             addEdge(graph, 0, 1, 38);
             addEdge(graph, 0, 2, 1);
             addEdge(graph, 0, 6, 20);
@@ -143,14 +143,14 @@ public class Dinics {
             addEdge(graph, 7, 3, 2);
             addEdge(graph, 7, 5, 5);
             addEdge(graph, 3, 9, 5);
-*/
+
 
         }
 
         public int Maxflow(){
-            return maxFlow(graph, 0, 5); //erster test
+            //return maxFlow(graph, 0, 5); //erster test
             //return maxFlow(graph, 0, 7); //zweiter test
-            //return maxFlow(graph, 0, 7); //dritter test
+            return maxFlow(graph, 0, 10); //dritter test
 
         }
 
