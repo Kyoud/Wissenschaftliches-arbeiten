@@ -163,17 +163,18 @@ Dinic's Algorithmus ist dem von Edmonds und Karp sehr ähnlich. Auch hier wird i
 
 \section{Der Inhalt}
 \label{Inhalt}
-Wir führen eine Evaluierung der genannten Maximal-Fluss Algorithmen durch zuerst auf im bezug auf die Mathematische Laufzeit. Außerdem beschäftigen wir uns mit den Algorithmen in der Praxis. Zuletzt wird ein Laufzeit Test der Algorithmen von Edmons Karp und Dinic anhand von Testdaten durchgefürt.
-Für die Laufzeit Test haben wir ein Java Programm an unser Bedürfnisse angepasst, welches den Maximalen Fluss errechnet. Außerdem wird die Zeit für jeden durchlauf wird gemessen.
-Da bei wenigen durchläufen eine genaue zeitmessung unmöglich ist werden jewails Einhundert Messungen erstellt. Diese bestehen aus jewails einer Millionen Durchläufe von denen der Mittelwert errechnet wird.
+Wir führen im bezug auf die Mathematische Laufzeit eine Evaluierung der genannten Maximal-Fluss Algorithmen durch. Außerdem beschäftigen wir uns mit der praktischen implementierung der Algorithmen. Zuletzt wird ein Laufzeit Test der Algorithmen von Edmons und Karp sowie Dinic anhand von Testdaten durchgefürt.
+Für die Laufzeit Test haben wir ein Java Programm an unser Bedürfnisse angepasst, welches den Maximalen Fluss errechnet. Für jede Berechnung wird die Zeit gemessen.
+Da bei wenigen Durchläufen eine genaue Zeitmessung unmöglich ist werden jewails einhundert Messungen erstellt. Diese bestehen aus jewails einer Millionen Algorithmen Durchläufe von denen der Mittelwert errechnet wird.
 Die Ergebnisse werden zur einfacheren Analyse in eine CSV Datei geschrieben.
-Es wird das Verhältniss der Laufzeit errechnet und auf Plausibilität geprüft.
+Mit diesen Messungen wird das Verhältniss der Laufzeiten errechnet und auf Plausibilität geprüft.
 Kriterien der Evaluierung, Vorstellung des Testaufbaus
 \section{Experimente}
 \label{Experimente}
 Auflistung Test welche Daten benutzen wir und was wir damit erreichen wollen?
-Unser test wurde mit drei Bespiel Graphen durchgeführt, welche den Unterschied zwischen den Algorithmen zeigen. Diese Unterscheiden sich in der Anzahl der Knoten und Kanten.
-Wobei das Verhältniss $(V/E)$ kleiner wird.
+Unser test wurde mit jewails drei Testpaaren durchgeführt, die sich in ihrer Knotenanzahl unterscheiden.
+Die einzelnen Paare unterscheiden sich jewails nur in der Anzahl ihrer Kanten.
+Mit diesen test zeigen wir, dass der 
 \subsection{Laufzeitvergleich}
 Vergleich der Test Ergebnisse
 

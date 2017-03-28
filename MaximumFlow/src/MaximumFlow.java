@@ -20,7 +20,7 @@ public class MaximumFlow {
         int maxFlowK =0;
         long timeStart;
         long timeEnd;
-        String filename = "log1_viel.csv";
+        String filename = "log1_wenig.csv";
         FileWriter fw = new FileWriter(filename, true); //the true will append the new data
 
        /* Scanner scanner = new Scanner(System.in);
@@ -55,29 +55,82 @@ public class MaximumFlow {
         // Usage example
         // Driver program to test above functions
         // Let us create a graph shown in the above example
-/*
-        int graph2[][] =new int[][] {
+
+
+        int graph2[][] =new int[][]{ //test 1 wenig
                 {0, 16, 13, 0, 0, 0}, //0
-                {0, 0, 10, 12, 0, 0}, //1
-                {0,0, 0, 0, 14, 0},  //2
+                {0, 0, 0, 12, 0, 0}, //1
+                {0, 4, 0, 0, 14, 0},  //2
                 {0, 0, 9, 0, 0, 20},  //3
                 {0, 0, 0, 7, 0, 4},   //4
                 {0, 0, 0, 0, 0, 0}    //5
 
 
         };
-        EdmondsKarp m = new EdmondsKarp(6);*/
-        int graph2[][] =new int[][] {
+        /*
+        int graph2[][] =new int[][] { //test 1 viel
                 {0, 16, 13, 5, 5, 0}, //0
-                {0, 0, 10, 12, 5, 0}, //1
-                {0,0, 0, 0, 14, 0},  //2
+                {0, 0, 0, 12, 5, 0}, //1
+                {0, 4, 0, 0, 14, 0},  //2
                 {0, 0, 9, 0, 0, 20},  //3
                 {0, 0, 0, 7, 0, 4},   //4
                 {0, 0, 0, 0, 0, 0}    //5
+};
+*/
+        /*int graph2[][] =new int[][] { //zweiter test wenig
+                {0, 38, 1, 0, 0, 0, 2 ,0}, //0
+                {0, 0, 8, 10, 13, 0, 0 ,0}, //1
+                {0, 0, 0, 26, 0, 0, 0 ,0}, //2
+                {0, 0, 0, 0, 20, 8, 24, 1}, //3
+                {0, 0, 2, 0, 0, 1, 0 ,7}, //4
+                {0, 0, 0, 0, 0, 0, 0 ,7}, //5
+                {0, 0, 0, 0, 0, 0, 0 ,27}, //6
+                {0, 0, 0, 0, 0, 0, 0 ,0}, //7
+        };*/
+        /*
+        int graph2[][] =new int[][] { //zweiter test viel
+                {0, 38, 1, 0, 5, 0, 2 ,0}, //0
+                {0, 0, 8, 10, 13, 5, 0 ,0}, //1
+                {0, 0, 0, 26, 0, 5, 0 ,0}, //2
+                {0, 0, 0, 0, 20, 8, 24, 1}, //3
+                {0, 0, 2, 0, 0, 1, 0 ,7}, //4
+                {0, 0, 0, 0, 0, 0, 0 ,7}, //5
+                {0, 0, 5, 0, 0, 0, 0 ,27}, //6
+                {0, 0, 0, 0, 0, 0, 0 ,0}, //7
+        };*/
 
+        /*int graph2[][] =new int[][]{ //dritter test wenig
+                {0, 38, 1, 0, 0, 0, 20, 0, 0, 0, 0}, //0
+                {0, 0, 8, 10, 13, 0, 0, 0, 0, 0, 0}, //1
+                {0, 0, 0, 26, 0, 0, 0, 0, 0, 0, 0}, //2
+                {0, 0, 0, 0, 20, 8, 24, 0, 0, 0, 1}, //3
+                {0, 0, 2, 0, 0, 1, 0, 0, 0, 0, 7}, //4
+                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, //5
+                {0, 0, 0, 0, 0, 0, 0, 19, 0, 0, 27}, //6
+                {0, 0, 0, 0, 0, 0, 0, 0, 11, 4, 0}, //7
+                {0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 0}, //8
+                {0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 12}, //9
+                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} //10
+        };*/
 
-        };
-        EdmondsKarp m = new EdmondsKarp(6);
+        /*int graph2[][] =new int[][]{ //dritter test mit viel
+                {0, 38, 1, 0, 0, 0, 20, 0, 0, 0, 0}, //0
+                {0, 0, 8, 10, 13, 0, 0, 0, 0, 0, 0}, //1
+                {0, 0, 0, 26, 0, 0, 0, 0, 0, 0, 0}, //2
+                {0, 0, 0, 0, 20, 8, 24, 0, 0, 5, 1}, //3
+                {0, 0, 2, 0, 0, 1, 0, 0, 0, 0, 7}, //4
+                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7}, //5
+                {0, 0, 2, 0, 0, 0, 0, 19, 0, 2, 27}, //6
+                {0, 0, 0, 2, 0, 5, 0, 0, 11, 4, 0}, //7
+                {0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 0}, //8
+                {0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 12}, //9
+                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} //10
+        };*/
+
+        EdmondsKarp m = new EdmondsKarp(6); //erster test
+        //EdmondsKarp m = new EdmondsKarp(8); //zweiter test
+        //EdmondsKarp m = new EdmondsKarp(11); //dritter test
+
         long tmp =0;
         try {
             fw.write("Edmonds Karp" + "," + "Dinic \n");//appends the string to the file
@@ -90,8 +143,9 @@ public class MaximumFlow {
             long TimeD =0;
             for (int i = 0; i < faktor; i++) {
                 timeStart = System.nanoTime();
-                //maxFlowK = m.fordFulkerson(graph2, 0, 5); //erster test
-                maxFlowK = m.fordFulkerson(graph2, 0, 5); //zweiter test
+                maxFlowK = m.fordFulkerson(graph2, 0, 5); //erster test
+                //maxFlowK = m.fordFulkerson(graph2, 0, 7); //zweiter test
+                //maxFlowK = m.fordFulkerson(graph2, 0, 11); //dritter test
                 timeEnd = System.nanoTime();
                 TimeK = TimeK + (timeEnd - timeStart);
 

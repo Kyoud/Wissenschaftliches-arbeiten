@@ -20,10 +20,9 @@ public class Dinics {
 
         public Dinics(){
 
-            /*graph = createGraph(6); //erster test
+            graph = createGraph(6); //erster test wenig
             addEdge(graph, 0, 1, 16);
             addEdge(graph, 0, 2, 13);
-            addEdge(graph, 1, 2, 10);
             addEdge(graph, 1, 3, 12);
             addEdge(graph, 2, 1, 4);
             addEdge(graph, 2, 4, 14);
@@ -31,12 +30,11 @@ public class Dinics {
             addEdge(graph, 3, 5, 20);
             addEdge(graph, 4, 3, 7);
             addEdge(graph, 4, 5, 4);
-            //zusätzliche Kanten*/
 
-            graph = createGraph(6); //erster test viel
+
+            /*graph = createGraph(6); //erster test viel
             addEdge(graph, 0, 1, 16);
             addEdge(graph, 0, 2, 13);
-            addEdge(graph, 1, 2, 10);
             addEdge(graph, 1, 3, 12);
             addEdge(graph, 2, 1, 4);
             addEdge(graph, 2, 4, 14);
@@ -44,12 +42,14 @@ public class Dinics {
             addEdge(graph, 3, 5, 20);
             addEdge(graph, 4, 3, 7);
             addEdge(graph, 4, 5, 4);
-            //zusätzliche kanten
+            //zusätzliche Kanten
             addEdge(graph, 0, 3, 5);
             addEdge(graph, 0, 4, 5);
             addEdge(graph, 1, 4, 5);
+            */
 
-            /*graph = createGraph(8); //zweiter Test
+
+           /* graph = createGraph(8); //zweiter Test kurz
             addEdge(graph, 0, 1, 38);
             addEdge(graph, 0, 2, 1);
             addEdge(graph, 0, 6, 2);
@@ -59,40 +59,38 @@ public class Dinics {
             addEdge(graph, 2, 3, 26);
             addEdge(graph, 3, 4, 20);
             addEdge(graph, 3, 5, 8);
-            addEdge(graph, 3, 6, 20);
-            addEdge(graph, 3, 7, 1);
-            addEdge(graph, 4, 5, 1);
-            addEdge(graph, 4, 2, 2);
-            addEdge(graph, 4, 7, 7);
-            addEdge(graph, 5, 7, 7);
-            addEdge(graph, 6, 7, 27);*/
-
-
-            /*graph = createGraph(8); //zweiter test viel
-            addEdge(graph, 0, 1, 38);
-            addEdge(graph, 0, 2, 1);
-            addEdge(graph, 0, 6, 2);
-            addEdge(graph, 1, 4, 13);
-            addEdge(graph, 1, 2, 8);
-            addEdge(graph, 1, 3, 10);
-            addEdge(graph, 2, 3, 26);
-            addEdge(graph, 3, 4, 20);
-            addEdge(graph, 3, 5, 8);
-            addEdge(graph, 3, 6, 20);
+            addEdge(graph, 3, 6, 24);
             addEdge(graph, 3, 7, 1);
             addEdge(graph, 4, 5, 1);
             addEdge(graph, 4, 2, 2);
             addEdge(graph, 4, 7, 7);
             addEdge(graph, 5, 7, 7);
             addEdge(graph, 6, 7, 27);
+    */
+            /*graph = createGraph(8); //zweiter Test lang
+            addEdge(graph, 0, 1, 38);
+            addEdge(graph, 0, 2, 1);
+            addEdge(graph, 0, 6, 2);
+            addEdge(graph, 1, 4, 13);
+            addEdge(graph, 1, 2, 8);
+            addEdge(graph, 1, 3, 10);
+            addEdge(graph, 2, 3, 26);
+            addEdge(graph, 3, 4, 20);
+            addEdge(graph, 3, 5, 8);
+            addEdge(graph, 3, 6, 24);
+            addEdge(graph, 3, 7, 1);
+            addEdge(graph, 4, 5, 1);
+            addEdge(graph, 4, 2, 2);
+            addEdge(graph, 4, 7, 7);
+            addEdge(graph, 5, 7, 7);
+            addEdge(graph, 6, 7, 27);
+            //zusätzliche kanten
             addEdge(graph, 0, 4, 5);
-            addEdge(graph, 6, 2, 5);
             addEdge(graph, 1, 5, 5);
             addEdge(graph, 2, 5, 5);
-
-
-/*
-            graph = createGraph(11);
+            addEdge(graph, 6, 2, 5);
+*/
+            /*graph = createGraph(11); //dritter test kurz
             addEdge(graph, 0, 1, 38);
             addEdge(graph, 0, 2, 1);
             addEdge(graph, 0, 6, 20);
@@ -109,16 +107,43 @@ public class Dinics {
             addEdge(graph, 4, 10, 7);
             addEdge(graph, 5, 10, 7);
             addEdge(graph, 6, 10, 27);
-            //zusätzliche Kanten
+            addEdge(graph, 6, 7, 19);
+            addEdge(graph, 7, 8, 11);
+            addEdge(graph, 7, 9, 4);
+            addEdge(graph, 8, 9, 12);
+            addEdge(graph, 9, 5, 5);
+            addEdge(graph, 9, 10, 12);*/
+
+            /*graph = createGraph(11); //dritter test kurz
+            addEdge(graph, 0, 1, 38);
+            addEdge(graph, 0, 2, 1);
+            addEdge(graph, 0, 6, 20);
+            addEdge(graph, 1, 4, 13);
+            addEdge(graph, 1, 2, 8);
+            addEdge(graph, 1, 3, 10);
+            addEdge(graph, 2, 3, 26);
+            addEdge(graph, 3, 4, 20);
+            addEdge(graph, 3, 5, 8);
+            addEdge(graph, 3, 6, 24);
+            addEdge(graph, 3, 10, 1);
+            addEdge(graph, 4, 5, 1);
+            addEdge(graph, 4, 2, 2);
+            addEdge(graph, 4, 10, 7);
+            addEdge(graph, 5, 10, 7);
+            addEdge(graph, 6, 10, 27);
             addEdge(graph, 6, 7, 19);
             addEdge(graph, 7, 8, 11);
             addEdge(graph, 7, 9, 4);
             addEdge(graph, 8, 9, 12);
             addEdge(graph, 9, 5, 5);
             addEdge(graph, 9, 10, 12);
+            //zusätzliche kanten
+            addEdge(graph, 6, 2, 2);
+            addEdge(graph, 6, 9, 2);
+            addEdge(graph, 7, 3, 2);
+            addEdge(graph, 7, 5, 5);
+            addEdge(graph, 3, 9, 5);
 */
-
-            //System.out.println(maxFlow(graph, 0, 5));
 
         }
 
