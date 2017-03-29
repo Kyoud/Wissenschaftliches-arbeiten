@@ -172,14 +172,16 @@ Für jede Berechnung des Flusses wird die Zeit gemessen. Da bei wenigen Durchlä
 Erst bei dieser Anzahl an Durchläufen konnte ein aussagekräftiges Ergebnis erzielt werden.
 Die erhaltenen Ergebnisse werden zur einfacheren Analyse in eine .csv Datei (Comma-separated values) geschrieben.
 Die Messungen der unterschiedlichen Paare sollen zeigen, dass Dinic allgemein schneller ist.
-(Der Vergleich innerhalb der Paare soll zeigen, dass der Algorithmus von Dinic bei der Erhöhung der Kantenanzahl einen größer werdenden prozentualen Vorteil zu verzeichnen hat.)
-Die Messungen des dritten Tests werden außerdem in einem Zweistichproben-t-Test auf einen signifikanten Unterschied getestet. 
+Der Vergleich innerhalb der Paare soll zeigen, dass der Algorithmus von Dinic bei der Erhöhung der Kantenanzahl einen größer werdenden prozentualen Vorteil zu verzeichnen hat.
+Die Messungen der Tests werden außerdem in einem Zweistichproben-t-Test auf einen signifikanten Unterschied getestet (siehe Anhang \ref{twert}).
+Es wird auf $H_{0} : \mu =\mu_{1}$ geprüft, die Stichproben unterscheiden sich nicht.
+Des Weiteren wird auf $H_{1} : \mu > \mu_{1}$ geprüft, ob die Edmonds und Karp Stichprobe größer ist als Dinic und damit langsamer.
 \section{Implementierung und Test}
 \label{Experimente}
 Es wurden beide Algorithmen in unser Programm implementiert und wir konn\-ten feststellen, dass beide Algorithmen ohne Probleme implementierbar sind. Allerdings ist Dinic durch seine zusätzliche Berechnung des blockierenden Flusses komplexer, daher ist der Implementierungsaufwand größer.
 \subsection{Laufzeitvergleich}
 Die Laufzeiten in der Theorie (Fig. \ref{fig:lzvergleich}) setzen sich aus den inneren und äußeren Schleifendurchläufen zusammen.
-Die Laufzeit des Ford Fulkerson ist vom gewählten Weg bzw. von der maximalen Kapazität $C$ einer Kante, der Anzahl der Knoten $n$ und Kanten $m$  abhängig.
+Die Laufzeit des Ford Fulkerson ist vom ge\-wählten Weg bzw. von der maximalen Kapazität $C$ einer Kante, der Anzahl der Knoten $n$ und Kanten $m$  abhängig.
 Durch den Einfluss der Kapazität hat der Algorithmus von Ford und Fulkerson einen Nachteil gegenüber den anderen.
 Deshalb vergleichen wir in unserem Laufzeittest nur die Algorithmen von Edmonds und Karp sowie Dinic.
 \begin{figure}[H] 
@@ -190,31 +192,34 @@ Deshalb vergleichen wir in unserem Laufzeittest nur die Algorithmen von Edmonds 
 \end{figure}
 Unser Test wurde mit jeweils drei Testpaaren durchgeführt, die sich in ihrer Knotenanzahl unterscheiden.
 Die einzelnen Paare unterscheiden sich nur in der Anzahl ihrer Kanten.
-Bei allen Graphen konnte beobachtet werden, dass die Durchschnittswerte der Laufzeit von Dinic unter den von Edmonds und Karp liegen (Siehe Anhang \ref{laufzeiten}). 
+Bei allen Graphen konnte beobachtet werden, dass die Durchschnittswerte der Laufzeit von Dinic unter den von Edmonds und Karp liegen (Siehe Figur \ref{fig:ergebnisstabelle1}-\ref{fig:ergebnisstabelle3}). 
 Außerdem werden die Durchschnittszeiten für komplexere Graphen größer, dies kann sowohl bei den Graphenpaaren als auch bei den Testgruppen beobachtet werden.
 Dies deckt sich mit unseren Erwartungen hinsichtlich der theoretischen Laufzeit.
-Die Paartests lieferten keine eindeutigen Ergebnisse. Beim ersten Testgraphen 1b (Fig. \ref{fig:testgraph1}) wird der Dinic Algorithmus trotz steigender Kantenanzahl im Verhältnis langsamer. Dies liegt vermutlich an schlecht gewählten zusätzlichen Kanten und der geringen Größe des Graphen.
 
-\begin{figure}
-\label{fig:testgraph1}
+Die Paartests bezüglich des Verhältnisses bei mehr kanten, lieferten keine eindeutigen Ergebnisse. Beim ersten Testgraphen 1b (Fig. \ref{fig:testgraph1}) wird der Dinic Algorithmus trotz steigender Kantenanzahl langsamer. Dies liegt vermutlich an schlecht gewählten zusätzlichen Kanten und der geringen Knotenanzahl des Graphen.
+Die weiteren Verhältnisse verändern sich wie erwartet, deshalb nehmen wir an, dass ein Zusammenhang besteht.
+Ohne weitere Tests kann dies jedoch nicht eindeutig bestätigt werden.
+
+Der t-Test zeigt bei allen Vergleichen von Edmonds und Karp mit Dinic, dass die Laufzeiten signifikant sind und die Hypothese $H_{1}$ mit mehr als 99,99\% angenommen wird. (Siehe Figur \ref{fig:ergebnisstabelle1}-\ref{fig:ergebnisstabelle3}).
+
+\citep{t-test}
+
+\begin{figure}[H]
     \includegraphics[scale=0.55]{ergebnisse1} 
 \caption{Die Ergebnisse des 1. Tests} 
-\end{figure}
-\begin{figure}
-\label{fig:testgraph1}
+\label{fig:ergebnisstabelle1}
     \includegraphics[scale=0.55]{ergebnisse2} 
 \caption{Die Ergebnisse des 3. Tests} 
-\end{figure}
-\begin{figure}
-\label{fig:testgraph1}
+\label{fig:ergebnisstabelle2}
     \includegraphics[scale=0.55]{ergebnisse3} 
 \caption{Die Ergebnisse des 3. Tests} 
+\label{fig:ergebnisstabelle3}
 \end{figure}
 
 \subsection{Verwendete Graphen}
 Hier eine bildliche Darstellung der in unserem Test genutzten Graphen.
 
-\begin{figure}
+\begin{figure}[H]
 \label{fig:testgraph1}
     \subfigure[Graph 1a,\newline  6 Knoten und 9 Kanten]{\includegraphics[height=3cm]{testgraph1}} 
     \subfigure[Graph 1b,\newline 6 Knoten und 12 Kanten]{\includegraphics[height=3cm]{testgraph11}} 
@@ -243,22 +248,22 @@ Wie schon in der Einleitung \ref{Einleitung} erwähnt wurde, konnten wir keine, 
 
 \section{Zusammenfassung}
 \label{Zusammenfassung}
-Anhand der unter \ref{Experimente} durchgeführten Laufzeittests, zeichnet sich der Vorteil des Dinic Algorithmus deutlich ab. Über je mehr Kanten ein Graph verfügt, desto vorteilhafter ist die Nutzung des Dinic Algorithmus. Fairerweise sollte aber gesagt sein, dass der Vorteil erst bei sehr großen Graphen spürbar zum tragen kommt. Der Zeitvorteil des Dinic Algorithmus bewegt sich bei den von uns gewählten Graphen in einem kaum messbaren Bereich, aber die prozentuale Überlegenheit bei steigender Kantenanzahl war deutlich zu erkennen. Dem Algorithmus von Dinic den Vorzug zu geben, ist unserer Ansicht nach erst bei großen Projekten oder sehr großen Graphen lohnenswert. Für die Abwasser oder Kanalberechnung eines Hauses beispielsweise, liegt der zeitliche Vorteil in einem nicht merklichen Bereich und ist daher zu Vernachlässigen. Sollte aber die Routenberechnung einer Strecke durch das Straßennetz eines ganzen Landes das Ziel sein, bietet der Algoithmus von Dinic deutliche Zeitvorteile. Demnach ist die Entscheidung, welcher Algorithmus gewählt wird, vom Anwendungsfall und den zeitlichen Voraussetzungen abhängig.
+Anhand der unter Abschnitt \ref{Experimente} durchgeführten Laufzeittests, zeichnet sich der Vorteil des Dinic Algorithmus deutlich ab. Über je mehr Kanten ein Graph verfügt, desto vorteilhafter ist die Nutzung des Dinic Algorithmus. Fairerweise sollte aber gesagt sein, dass der Vorteil erst bei sehr großen Graphen spürbar zum tragen kommt. Der Zeitvorteil des Dinic Algorithmus bewegt sich bei den von uns gewählten Graphen im Nanosekundenbereich, aber die prozentuale Überlegenheit bei steigender Kantenanzahl war deutlich zu erkennen. Dem Algorithmus von Dinic den Vorzug zu geben, ist unserer Ansicht nach erst bei großen Projekten oder sehr großen Graphen lohnenswert. Für die Abwasser oder Kanalberechnung eines Hauses beispielsweise, liegt der zeitliche Vorteil in einem nicht merklichen Bereich und ist daher zu Vernachlässigen. Sollte aber die Routenberechnung einer Strecke durch das Straßennetz eines ganzen Landes das Ziel sein, bietet der Algoithmus von Dinic deutliche Zeitvorteile. Demnach ist die Entscheidung, welcher Algorithmus gewählt wird, vom Anwendungsfall und den zeitlichen Voraussetzungen abhängig.
 
 \bibliography{quellen}
 \bibliographystyle{plainnat} 
 
 \section{Anhänge}
 \subsection{Angang 1:}
+\label{gesamttabelle}
 Komplette Testergebnisse in tabellarischer Form
 
-%\includepdf[scale=0.9, pagecommand=\subsection{Daten aus Laufzeit %Tests},  offset=0 -2cm]{auswertung.pdf}
+\includepdf[pages=1-, scale=0.9, offset=0 -1cm]{auswertung.pdf}
 
 \subsection{Angang 2:}
+\label{code}
 Code des Java Testprogramms
-
-\subsection{Angang 3:}
-Statistische Auswertung (t-Wert der Vergleiche)
+\includepdf[pages=1-, scale=0.9,  offset=0 -1cm]{code.pdf}
 
 
 \end{document}

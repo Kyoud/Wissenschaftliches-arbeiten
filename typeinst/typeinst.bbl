@@ -1,4 +1,4 @@
-\begin{thebibliography}{5}
+\begin{thebibliography}{6}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -21,6 +21,11 @@ Quirin Fischer.
 \newblock Was ist ein algorithmus – definition und beispiele, 10 2015.
 \newblock URL
   \url{https://www-m9.ma.tum.de/graph-algorithms/flow-ford-fulkerson/index_de.html}.
+
+\bibitem[Hemmerich(2017)]{t-test}
+Wanja Hemmerich.
+\newblock t-test, 2017.
+\newblock URL \url{http://matheguru.com/stochastik/267-t-test.html}.
 
 \bibitem[Noltemeier(2009)]{GKuA}
 Sven Oliver Krumke {,}~Hartmut Noltemeier.
