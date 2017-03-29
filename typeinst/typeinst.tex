@@ -10,6 +10,8 @@
 \usepackage{here}
 \usepackage{subfigure}
 \usepackage{url}
+\usepackage{appendix}
+\usepackage{pdfpages} 
     
 \newcommand{\keywords}[1]{\par\addvspace\baselineskip
 \noindent\keywordname\enspace\ignorespaces#1}
@@ -156,10 +158,11 @@ Er unterscheidet sich zum Ford Fulkerson durch seine zusätzliche Breitensuche \
 welche immer den Kürzesten Weg von s nach t gemessen an der Anzahl von Kanten liefert. 
 Entlang dieser wird der Fluss erhöt.
 Im Vergelich zum ablauf in \ref{FuF} ändert sich Schritt Nr. 3 von einem einfachen $(s, t)$-Weg $p$ in $G^{f}$ zu dem Kürzesten.
+Sobald von der Breitensuche keinen $(s,t)$-Weg mehr gefunden wird ist der Maximalfluss erreicht. 
 
 \subsection{Algorithmus von Dinic}
 \label{Dinic}
-Dinic's Algorithmus ist dem von Edmonds und Karp sehr ähnlich. Auch hier wird im Gegensatz zu Ford und Fulkerson eine Breitensuche \ref{Breitensuche} durchgeführt. Der Unterschied zu Edmonds und Karp zeigt sich im Umgang mit den gefundenen Wegen. Bei Dinic wird nicht nur der kürzeste $(s, t)$-Weg $p$ in $G^{f}$ durchlaufen und berechnet, stattdessen werden große $(s, t)$-Flüsse aus mehreren kürzesten $(s, t)$-Wegen zusammengesetzt, anschließend abgearbeitet und der maximale Fluss ermittelt.
+Dinic's Algorithmus ist dem von Edmonds und Karp sehr ähnlich. Auch hier wird im Gegensatz zu Ford und Fulkerson eine Breitensuche \ref{Breitensuche} durchgeführt. Der Unterschied zu Edmonds und Karp zeigt sich im Umgang mit den gefundenen Wegen. Bei Dinic wird nicht nur der kürzeste $(s, t)$-Weg $p$ in $G^{f}$ durchlaufen und berechnet, stattdessen wird ein blockierender $(s, t)$-Flüss aus allen kürzesten $(s, t)$-Wegen zusammengesetzt, anschließend abgearbeitet und auf den Fluss addiert. Sobald keine weiteren Wege vorhanden sind ist der maximale Fluss gefunden.
 
 \section{Testablauf und Prüfungskriterien}
 \label{Inhalt}
@@ -168,17 +171,17 @@ Für die Laufzeit Test haben wir ein Java Programm an unser Bedürfnisse angepas
 Für jede Berechnung wird die Zeit gemessen, da bei wenigen Durchläufen eine genaue Zeitmessung unmöglich ist werden jewails einhundert Messungen erstellt. Diese bestehen aus jewails einer Millionen Algorithmen Durchläufe von denen der Mittelwert errechnet wird.
 Erst bei dieser Anzahl an durchläufen konnte ein konsistentes Ergebniss erziehlt werden.
 Die erhaltenen Ergebnisse werden zur einfacheren Analyse in eine CSV Datei geschrieben.
-Mit diesen Messungen wird das Verhältniss der Laufzeiten errechnet und auf Plausibilität geprüft.
-Kriterien der Evaluierung, Vorstellung des Testaufbaus
+Die Messungen der unterschiedlichen Paare sollen zeigen, dass Dinic allgemein schneller ist.
+(Der Vergleich innerhalb der Paare soll zeigen, dass Dinic bei alleiniger Erhöhung der Kanten Anzahl einen größeren prozentuellen Vorsprung hat.)
+Die Messungen des dritten Tests werden außerdem in einem Zweistichproben-t-Test auf einen signifikanten Unterschied getestet. 
 \section{Implementierung und Test}
 \label{Experimente}
-Auflistung Test welche Daten benutzen wir und was wir damit erreichen wollen?
 Wir haben beide Algorithmen in unserem Programm Implementiert. Dabei konnten wir feststellen, dass beide Algorithmen ohne große Probleme implementierbar sind. Allerdings ist Dinic durch seine zusätzliche Berechnung des blockierenden Flusses Komplexer, daher ist der Implementierungsaufwand größer.
 \subsection{Laufzeitvergleich}
 Die Laufzeiten in der Theorie (Fig. \ref{fig:lzvergleich}) setzen sich aus den inneren und äußeren Schleifendurchläufen zusammen.
 Die Laufzeit des Ford Fulkerson ist vom gewählten Weg bzw. von der maximale Kapazität $C$ einer Kante, der Anzahl der Knoten $n$ und Kanten $m$  abhängig.
 Durch den einfluss der Kapazität hat der Algorithmus von Ford und Fulkerson einen Nachteil gegenüber den anderen.
-Desshalb vergleichen wir in unserm Laufzeittest nur den Algorithmus von Edmonds und Karp sowie Dinic.
+Desshalb werden in den Laufzeittest nur den Algorithmus von Edmonds und Karp sowie Dinic betrachtet.
 \begin{figure}[H] 
   \centering
      \includegraphics[scale=0.42]{lzvergleich} 
@@ -187,7 +190,13 @@ Desshalb vergleichen wir in unserm Laufzeittest nur den Algorithmus von Edmonds 
 \end{figure}
 Unser test wurde mit jewails drei Testpaaren durchgeführt, die sich in ihrer Knotenanzahl unterscheiden.
 Die einzelnen Paare unterscheiden sich jewails nur in der Anzahl ihrer Kanten.
-Mit diesen test zeigen wir, dass der 
+Bei allen Graphen konnte beobachtet werden, dass die durchschnitts werte der Laufzeit von Dinic unter den von Edmonds und Karp liegen (Siehe Anhang \ref{laufzeiten}. 
+Außerdem werden die Durchschnitts Zeit für kompläxere Graphen länger, dies kann sowohl zwischen den Paaren als auch zwischen den Test Gruppen beobachtet werden.
+Dies deckt sich mit unseren Erwartungen hinsichtlich der theoretischen Laufzeit.
+(Die Paar Tests liefern uns uneindeutige ergebnisse. Beim ersten Testgraphen (Fig. \ref{fig:testgraph1}) nähert sich das verhältniss der beiden Durchschnittswerte an. 
+Dies ist entspricht nicht unseren Erwartungen. Wir nehmen hier an, dass die geringe Komplexität)
+Die Berechnung des Zweistichproben Tests
+
 
 
 \newpage
@@ -223,6 +232,8 @@ Wie schon in der Einleitung \ref{Einleitung} erwähnt wurde, konnten wir keine, 
 \section{Zusammenfassung}
 \label{Zusammenfassung}
 Anhand der unter \ref{Experimente} durchgeführten Laufzeittests, zeichnet sich der Vorteil des Dinic Algorithmus deutlich ab. Über je mehr Kanten ein Graph verfügt, desto vorteilhafter ist die Nutzung des Dinic Algorithmus. Fairerweise sollte aber gesagt sein, dass der Vorteil erst bei sehr großen Graphen zum tragen kommt. Der Zeitvorteil des Dinic Algorithmus bewegt sich bei den von uns gewählten Graphen in einem kaum messbaren Bereich, aber die prozentuale Überlegenheit bei steigender Kantenanzahl war deutlich zu erkennen.  
+\section{Anahng}
+\includepdf[scale=0.9, pagecommand=\subsection{Daten aus Laufzeit Tests},  offset=0 -2cm]{auswertung.pdf}
 
 \bibliography{quellen}
 \bibliographystyle{plainnat} 
