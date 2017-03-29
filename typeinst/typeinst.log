@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.29)  29 MAR 2017 11:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.29)  29 MAR 2017 12:11
 entering extended mode
 **./typeinst.tex
 (typeinst.tex
@@ -587,7 +587,17 @@ File: pppdftex.def 2017/01/14 v0.5h Pdfpages driver for pdfTeX (AM)
 \c@AM@survey=\count129
 \AM@templatesizebox=\box56
 )
-(typeinst.aux)
+(typeinst.aux
+
+LaTeX Warning: Label `fig:testgraph1' multiply defined.
+
+
+LaTeX Warning: Label `fig:testgraph1' multiply defined.
+
+
+LaTeX Warning: Label `fig:testgraph1' multiply defined.
+
+)
 \openout1 = `typeinst.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
@@ -602,8 +612,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
 LaTeX Font Info:    ... okay on input line 19.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
 LaTeX Font Info:    ... okay on input line 19.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count130
 \scratchdimen=\dimen135
@@ -835,49 +844,70 @@ Overfull \hbox (8.26176pt too wide) in paragraph at lines 187--188
 
 LaTeX Warning: Reference `laufzeiten' on page 7 undefined on input line 193.
 
-<testgraph1.png, id=35, 811.833pt x 502.2765pt>
+<ergebnisse1.png, id=35, 633.36626pt x 183.68625pt>
+File: ergebnisse1.png Graphic file (type png)
+ <use ergebnisse1.png>
+Package pdftex.def Info: ergebnisse1.png used on input line 200.
+(pdftex.def)             Requested size: 348.35252pt x 101.02773pt.
+
+Overfull \hbox (1.22899pt too wide) in paragraph at lines 200--201
+[][] 
+ []
+
+<ergebnisse2.png, id=36, 629.35126pt x 185.69376pt>
+File: ergebnisse2.png Graphic file (type png)
+ <use ergebnisse2.png>
+Package pdftex.def Info: ergebnisse2.png used on input line 205.
+(pdftex.def)             Requested size: 346.14426pt x 102.13187pt.
+
+<ergebnisse3.png, id=37, 630.355pt x 182.6825pt>
+File: ergebnisse3.png Graphic file (type png)
+ <use ergebnisse3.png>
+Package pdftex.def Info: ergebnisse3.png used on input line 210.
+(pdftex.def)             Requested size: 346.69632pt x 100.47568pt.
+
+<testgraph1.png, id=38, 811.833pt x 502.2765pt>
 File: testgraph1.png Graphic file (type png)
  <use testgraph1.png>
-Package pdftex.def Info: testgraph1.png used on input line 203.
+Package pdftex.def Info: testgraph1.png used on input line 219.
 (pdftex.def)             Requested size: 137.96022pt x 85.35826pt.
 
-<testgraph11.png, id=36, 807.015pt x 504.6855pt>
+<testgraph11.png, id=39, 807.015pt x 504.6855pt>
 File: testgraph11.png Graphic file (type png)
  <use testgraph11.png>
-Package pdftex.def Info: testgraph11.png used on input line 204.
+Package pdftex.def Info: testgraph11.png used on input line 220.
 (pdftex.def)             Requested size: 136.48883pt x 85.35826pt.
-
-<testgraph2.png, id=37, 858.8085pt x 522.753pt>
+ [7 <./lzvergleich.png> <./ergebnisse1.png>]
+<testgraph2.png, id=46, 858.8085pt x 522.753pt>
 File: testgraph2.png Graphic file (type png)
  <use testgraph2.png>
-Package pdftex.def Info: testgraph2.png used on input line 210.
+Package pdftex.def Info: testgraph2.png used on input line 226.
 (pdftex.def)             Requested size: 140.2296pt x 85.35826pt.
 
-<testgraph22.png, id=38, 846.7635pt x 498.663pt>
+<testgraph22.png, id=47, 846.7635pt x 498.663pt>
 File: testgraph22.png Graphic file (type png)
  <use testgraph22.png>
-Package pdftex.def Info: testgraph22.png used on input line 211.
+Package pdftex.def Info: testgraph22.png used on input line 227.
 (pdftex.def)             Requested size: 144.94276pt x 85.35826pt.
 
-<testgraph3.png, id=39, 829.9005pt x 525.162pt>
+<testgraph3.png, id=48, 829.9005pt x 525.162pt>
 File: testgraph3.png Graphic file (type png)
  <use testgraph3.png>
-Package pdftex.def Info: testgraph3.png used on input line 217.
+Package pdftex.def Info: testgraph3.png used on input line 233.
 (pdftex.def)             Requested size: 157.36615pt x 99.58464pt.
 
-<testgraph33.png, id=40, 856.3995pt x 496.254pt>
+<testgraph33.png, id=49, 856.3995pt x 496.254pt>
 File: testgraph33.png Graphic file (type png)
  <use testgraph33.png>
-Package pdftex.def Info: testgraph33.png used on input line 218.
+Package pdftex.def Info: testgraph33.png used on input line 234.
 (pdftex.def)             Requested size: 171.85184pt x 99.58464pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7 <./lzvergleich.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8 <./testgraph1.png> <./testgraph11.png> <./testgraph2.png> <./testgraph22.pn
-g> <./testgraph3.png> <./testgraph33.png>] (typeinst.bbl [9]
+ [8 <./ergebnisse2.png> <./ergebnisse3.png> <./testgraph1.png> <./testgraph11.p
+ng>]
+[9 <./testgraph2.png> <./testgraph22.png> <./testgraph3.png> <./testgraph33.png
+>] (typeinst.bbl [10]
 Underfull \hbox (badness 1072) in paragraph at lines 14--18
 []\OT1/cmr/m/n/10 Agnieszka Cz-ernik.  Was ist ein al-go-rith-mus { def-i-ni-ti
 on und beispiele,
@@ -895,18 +925,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--24
 ow-[]ford-[]fulkerson /
  []
 
-) [10
+) [11
 
 ] (typeinst.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 4622 strings out of 493335
- 61946 string characters out of 3136680
- 137182 words of memory out of 3000000
- 8039 multiletter control sequences out of 15000+200000
+ 4637 strings out of 493335
+ 62228 string characters out of 3136680
+ 137221 words of memory out of 3000000
+ 8051 multiletter control sequences out of 15000+200000
  10781 words of font info for 42 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,8n,39p,1170b,281s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -923,9 +956,9 @@ MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on typeinst.pdf (10 pages, 850838 bytes).
+Output written on typeinst.pdf (11 pages, 951188 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
+ 113 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
